@@ -9,7 +9,8 @@ struct ContentView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 26.0, height: 26.0)
                 .cornerRadius(10.0)
-                .padding()
+                .padding(9)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             Text("SwiftUI for iOS 15")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -28,8 +29,7 @@ struct ContentView: View {
         .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
         .padding(.vertical, 20)
         .frame(width: nil, height: 350.0)
-        .background(.ultraThinMaterial) // Material is to have a glassy view
-        .cornerRadius(/*@START_MENU_TOKEN@*/30.0/*@END_MENU_TOKEN@*/)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
         .padding(.horizontal,20)
         .background(
@@ -47,6 +47,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
+            .preferredColorScheme(.light)
         ContentView()
             .preferredColorScheme(.dark)
     }
