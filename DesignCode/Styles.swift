@@ -3,7 +3,8 @@ import SwiftUI
 struct StrokeStyle: ViewModifier {
     // created a variable cornerRadius to be able to pass the value of it in the modifier as Dynamic value: type CGFloat
     var cornerRadius : CGFloat
-    
+    // adopting to the darkMode
+    @Environment(\.colorScheme) var colorScheme
     func body(content: Content) -> some View {
         content.overlay(
             RoundedRectangle(
@@ -12,7 +13,10 @@ struct StrokeStyle: ViewModifier {
             )
                 .stroke(
                     .linearGradient(
-                        colors: [.white.opacity(0.3),.black.opacity(0.1)],
+                        colors: [
+                            .white.opacity(colorScheme == .dark ? 0.6 : 0.3 ),
+                            .black.opacity(colorScheme == .dark ? 0.3 : 0.1 )
+                        ],
                         startPoint: .top,
                         endPoint: .bottom
                     )

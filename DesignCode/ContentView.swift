@@ -10,7 +10,7 @@ struct ContentView: View {
                 .frame(width: 26.0, height: 26.0)
                 .cornerRadius(10.0)
                 .padding(9)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .strokeStyle(cornerRadius: 20)
             Text("SwiftUI for iOS 15")
                 .font(.largeTitle)
