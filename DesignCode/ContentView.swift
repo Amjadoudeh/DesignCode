@@ -31,13 +31,7 @@ struct ContentView: View {
         .frame(width: nil, height: 350.0)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
-        .overlay(
-            RoundedRectangle(
-                cornerRadius: 30, style: .continuous
-            )
-                .stroke(.linearGradient(colors: [.white.opacity(0.3),.black.opacity(0.1)], startPoint: .top, endPoint: .bottom))
-                .blendMode(.overlay)
-        )
+        .modifier(StrokeStyle())
         .padding(.horizontal,20)
         .background(
             Image("Blob 1")
@@ -47,7 +41,7 @@ struct ContentView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 230)
-                .offset(x: 46, y: -80)
+                .offset(x: 35, y: -80)
         )
     }
 }
