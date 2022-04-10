@@ -16,7 +16,7 @@ struct ContentView: View {
             Text("20 sections - 3 hours".uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
             Text("Build an iOS app for iOS 15 with custom layouts,animations and ...")
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
@@ -33,7 +33,14 @@ struct ContentView: View {
         .padding(.horizontal,20)
         .background(
             Image("Blob 1")
-                .offset(x: 250, y: -100)) // transform the image
+                .offset(x: 0, y: -100)) // transform the image
+        .overlay( // so now we 3 layers of background
+            Image("Illustration 5")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 230)
+                .offset(x: 46, y: -80)
+        )
     }
 }
 
