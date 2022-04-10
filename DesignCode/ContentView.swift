@@ -11,6 +11,7 @@ struct ContentView: View {
                 .cornerRadius(10.0)
                 .padding(9)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .strokeStyle(cornerRadius: 20)
             Text("SwiftUI for iOS 15")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -31,7 +32,7 @@ struct ContentView: View {
         .frame(width: nil, height: 350.0)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
-        .modifier(StrokeStyle())
+        .strokeStyle()//after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
         .padding(.horizontal,20)
         .background(
             Image("Blob 1")
