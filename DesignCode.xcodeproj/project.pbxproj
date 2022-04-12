@@ -15,6 +15,7 @@
 		70BFA4682800EFF2002FD946 /* DesignCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFA4672800EFF2002FD946 /* DesignCodeUITests.swift */; };
 		70BFA46A2800EFF2002FD946 /* DesignCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFA4692800EFF2002FD946 /* DesignCodeUITestsLaunchTests.swift */; };
 		70E846392803942100E648EE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E846382803942100E648EE /* Styles.swift */; };
+		70EB0AA628061FDD002EC3CE /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB0AA528061FDD002EC3CE /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		70BFA4672800EFF2002FD946 /* DesignCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeUITests.swift; sourceTree = "<group>"; };
 		70BFA4692800EFF2002FD946 /* DesignCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70E846382803942100E648EE /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		70EB0AA528061FDD002EC3CE /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				70BFA44C2800EFF1002FD946 /* DesignCodeApp.swift */,
 				70BFA44E2800EFF1002FD946 /* ContentView.swift */,
+				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
 				70E846382803942100E648EE /* Styles.swift */,
 				70BFA4502800EFF2002FD946 /* Assets.xcassets */,
 				70BFA4522800EFF2002FD946 /* Preview Content */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EB0AA628061FDD002EC3CE /* AccountView.swift in Sources */,
 				70E846392803942100E648EE /* Styles.swift in Sources */,
 				70BFA44F2800EFF1002FD946 /* ContentView.swift in Sources */,
 				70BFA44D2800EFF1002FD946 /* DesignCodeApp.swift in Sources */,
