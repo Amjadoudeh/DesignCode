@@ -39,12 +39,43 @@ struct AccountView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 Section {
-                    Label("Settings",systemImage: "gear")
+                    NavigationLink(destination: ContentView()) {
+                        Label("Settings",systemImage: "gear")
+                    }
+                    // just using different way to navigate!
+                    NavigationLink {
+                        Text("Billing") }
+                        label: {
                     Label("Billing",systemImage: "creditcard")
-                    Label("Help",systemImage: "questionmark")
                 }
-                .listRowSeparatorTint(.blue) // Changing the color of the separator
+                    NavigationLink { Text("Help") } label:
+                        {
+                        Label("Help",systemImage: "questionmark")
+                    }
+                }
+                .accentColor(.primary)
+                .listRowSeparatorTint(.blue) //Changing the color of the separator
                 .listRowSeparator(.hidden)
+                
+                // costumise the Section by using HStack
+                Section {
+                    Link(destination: URL(string:"https://amjadoudeh.com")!) {
+                        HStack {
+                            Label("Website", systemImage: "house")
+                            Spacer()
+                            Image(systemName: "link")
+                        }
+                    }
+                    
+                    Link(destination: URL(string:"https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
+                        HStack {
+                            Label("Youtube", systemImage: "tv")
+                            Spacer()
+                            Image(systemName: "link")
+                        }
+                    }
+                }
+                .accentColor(.primary)
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
