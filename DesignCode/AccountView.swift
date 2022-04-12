@@ -76,6 +76,7 @@ struct AccountView: View {
                     }
                 }
                 .accentColor(.primary)
+                .listRowSeparator(.hidden)
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
