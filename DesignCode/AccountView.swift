@@ -62,19 +62,25 @@ struct AccountView: View {
                 
                 // costumise the Section by using HStack
                 Section {
-                    Link(destination: URL(string:"https://amjadoudeh.com")!) {
-                        HStack {
-                            Label("Website", systemImage: "house")
-                            Spacer()
-                            Image(systemName: "link")
+                    
+                    if !isDeleted {
+                        Link(destination: URL(string:"https://amjadoudeh.com")!) {
+                            HStack {
+                                Label("Website", systemImage: "house")
+                                Spacer()
+                                Image(systemName: "link")
+                            }
                         }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button(action: { isDeleted = true }) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                            Button(action: { isDeleted = true }) {
+                                Label("Pin", systemImage: "pin")
+                            }
+                            .tint(.yellow)
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button(action: {}) {
-                            Label("Delete", systemImage: "trash")
-                            
-                        }
-                        .tint(.red)
                     }
                     Link(destination: URL(string:"https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
                         HStack {
