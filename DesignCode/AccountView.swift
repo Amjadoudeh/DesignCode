@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AccountView: View {
+    // sitting a state for deleting
+    @State var isDeleted = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -66,7 +69,13 @@ struct AccountView: View {
                             Image(systemName: "link")
                         }
                     }
-                    
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(action: {}) {
+                            Label("Delete", systemImage: "trash")
+                            
+                        }
+                        .tint(.red)
+                    }
                     Link(destination: URL(string:"https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
                         HStack {
                             Label("Youtube", systemImage: "tv")
