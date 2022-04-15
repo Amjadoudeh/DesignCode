@@ -55,11 +55,11 @@ struct AccountView: View {
             // just using different way to navigate!
             NavigationLink {
                 Text("Billing") }
-                label: {
+        label: {
             Label("Billing",systemImage: "creditcard")
         }
             NavigationLink { Text("Help") } label:
-                {
+            {
                 Label("Help",systemImage: "questionmark")
             }
         }
@@ -84,15 +84,8 @@ struct AccountView: View {
                         Label("Delete", systemImage: "trash")
                     }
                     .tint(.red)
-                    Button(action: { isPinned.toggle() }) {
-                        if isPinned {
-                        Label("Pin", systemImage: "pin")
-                        } else {
-                            Label("Unpin", systemImage: "pin.slash")
-                        }
-                    }
-                    .tint(isPinned ? .gray : .yellow)
-            }
+                    pinButton
+                }
             }
             Link(destination: URL(string:"https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
                 HStack {
@@ -101,9 +94,23 @@ struct AccountView: View {
                     Image(systemName: "link")
                 }
             }
+            .swipeActions {
+                pinButton
+            }
         }
         .accentColor(.primary)
         .listRowSeparator(.hidden)
+    }
+    
+    var pinButton: some View {
+        Button(action: { isPinned.toggle() }) {
+            if isPinned {
+            Label("Pin", systemImage: "pin")
+            } else {
+                Label("Unpin", systemImage: "pin.slash")
+            }
+        }
+        .tint(isPinned ? .yellow : .gray)
     }
 }
 
