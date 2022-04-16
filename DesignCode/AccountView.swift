@@ -28,10 +28,8 @@ struct AccountView: View {
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
             // will make an intersting shape using modifiers
-                .background(Image(systemName: "hexagon")
-                                .symbolVariant(.fill)
-                                .foregroundColor(.blue)
-                                .font(.system(size: 200))
+                .background(
+                    HexagonView()
                                 .offset(x: -50, y: -100)
                 )
             Text("Amjad Oudeh")
