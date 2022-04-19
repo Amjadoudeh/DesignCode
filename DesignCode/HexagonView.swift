@@ -1,10 +1,3 @@
-//
-//  HexagonView.swift
-//  DesignCode
-//
-//  Created by Amjad Oudeh on 15.04.22.
-//
-
 import SwiftUI
 
 struct HexagonView: View {
