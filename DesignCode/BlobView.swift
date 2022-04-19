@@ -22,7 +22,7 @@ struct BlobView: View {
             .rotationEffect(.degrees(appear ? 360 : 0 ))
         }
         .onAppear {
-            withAnimation {
+            withAnimation(.linear(duration: 30).repeatForever(autoreverses: true)){
                 appear = true
             }
         }
