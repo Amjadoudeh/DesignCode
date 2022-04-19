@@ -10,6 +10,9 @@ import SwiftUI
 struct BlobView: View {
     var body: some View {
         BlobShape()
+            .frame(width:300, height: 310)
+            .foregroundStyle(.linearGradient(colors: [.pink, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .padding()
     }
 }
 
