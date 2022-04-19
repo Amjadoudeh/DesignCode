@@ -1,7 +1,10 @@
 import SwiftUI
 
 struct BlobView: View {
+    @State var appear = false
+    
     var body: some View {
+        
 /// Creating the same shap using Canvas
         /// using the timelineView to animate the blob
         TimelineView(.animation) { timeline in
@@ -16,6 +19,12 @@ struct BlobView: View {
                 context.fill(path(in: CGRect(x: 0, y: 0,width: size.width , height: size.height ), x: x , x2 : x2), with: .linearGradient(Gradient(colors: [.pink, .blue]), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 300, y: 310)))
             }
             .frame(width:300, height: 310)
+            .rotationEffect(.degrees(appear ? 360 : 0 ))
+        }
+        .onAppear {
+            withAnimation {
+                appear = true
+            }
         }
     }
 

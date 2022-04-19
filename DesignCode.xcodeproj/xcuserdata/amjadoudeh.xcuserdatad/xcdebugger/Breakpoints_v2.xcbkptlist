@@ -14,9 +14,9 @@
             filePath = "DesignCode/BlobView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "path(in:x:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "path(in:x:x2:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
