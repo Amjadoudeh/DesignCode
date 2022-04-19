@@ -32,6 +32,11 @@ struct AccountView: View {
                     HexagonView()
                                 .offset(x: -50, y: -100)
                 )
+                .background(
+                    BlobView()
+                        .offset(x: 190, y: 80)
+                        .scaleEffect(0.4)
+                )
             Text("Amjad Oudeh")
                 .font(.title.weight(.semibold))
             HStack {
