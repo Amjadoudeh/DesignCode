@@ -2,18 +2,36 @@ import SwiftUI
 
 struct TabBar: View {
     var body: some View {
-/// Using a build-in tab bar 
-        TabView {
+        ZStack(alignment: .bottom) {
             ContentView()
-                .tabItem {
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            HStack {
+                Spacer()
+                VStack(spacing: 0) {
                     Image(systemName: "house")
+                        .symbolVariant(.fill)
+                        .font(.body.bold())
                     Text("Home")
+                        .font(.caption2)
                 }
-            AccountView()
-                .tabItem {
+                Spacer()
+                VStack(spacing: 0) {
                     Image(systemName: "person")
+                        .symbolVariant(.fill)
+                        .font(.body.bold())
                     Text("Account")
+                        .font(.caption2)
                 }
+                Spacer()
+            }
+            .padding(.top, 14)
+            .frame(height: 88 , alignment: .top)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
+            .strokeStyle(cornerRadius: 34)
+            .frame(maxHeight: .infinity , alignment: .bottom)
+            .ignoresSafeArea()
+            
             
         }
     }
