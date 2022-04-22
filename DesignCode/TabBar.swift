@@ -36,7 +36,7 @@ struct TabBar: View {
                         // just to fix the size of each
                         .frame(maxWidth: .infinity)
                     }
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
                 }
             }
             .padding(.horizontal, 8)
