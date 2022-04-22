@@ -57,7 +57,31 @@ struct TabBar: View {
                         Spacer()
                         Spacer()
                     }
-                    Circle().fill(hoverColor).frame(width: 80)
+                    Circle().fill(hoverColor).frame(width: 88)
+                    if selectedTab == .home { Spacer() }
+                    if selectedTab == .explore {
+                        Spacer()
+                        Spacer()
+                    }
+                    if selectedTab == .notifications { Spacer() }
+                }
+                    .padding(.horizontal, 8)
+            )
+            /// drawing the line above the circle
+            .overlay(
+                HStack {
+                    if selectedTab == .library { Spacer() }
+                    if selectedTab == .explore { Spacer() }
+                    if selectedTab == .notifications {
+                        Spacer()
+                        Spacer()
+                    }
+                    Rectangle()
+                        .fill(hoverColor)
+                        .frame(width: 29, height: 5)
+                        .cornerRadius(30)
+                        .frame(width: 88)
+                        .frame(maxHeight: .infinity, alignment: .top)
                     if selectedTab == .home { Spacer() }
                     if selectedTab == .explore {
                         Spacer()
