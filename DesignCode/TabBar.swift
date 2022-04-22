@@ -7,7 +7,6 @@ struct TabBar: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             HStack {
-                Spacer()
                 ForEach(tabItems) { item in
                     VStack(spacing: 0) {
                         Image(systemName: item.icon)
@@ -16,13 +15,13 @@ struct TabBar: View {
                             .frame(width: 44 , height: 30)
                         Text(item.text)
                             .font(.caption2)
+                            .lineLimit(1)
                     }
                     // just to fix the size of each
                     .frame(maxWidth: .infinity)
-                    Spacer()
                 }
-                
             }
+            .padding(.horizontal, 8)
             .padding(.top, 14)
             .frame(height: 88 , alignment: .top)
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
