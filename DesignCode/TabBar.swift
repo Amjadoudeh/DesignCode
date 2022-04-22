@@ -43,9 +43,29 @@ struct TabBar: View {
             .padding(.top, 14)
             .frame(height: 88 , alignment: .top)
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
+            .background(
+                HStack {
+                    
+                    if selectedTab == .library { Spacer() }
+                    if selectedTab == .explore { Spacer() }
+                    if selectedTab == .notifications {
+                        Spacer()
+                        Spacer()
+                    }
+                    Circle().fill(.pink).frame(width: 80)
+                    if selectedTab == .home { Spacer() }
+                    if selectedTab == .explore {
+                        Spacer()
+                        Spacer()
+                    }
+                    if selectedTab == .notifications { Spacer() }
+                }
+                    .padding(.horizontal, 8)
+            )
             .strokeStyle(cornerRadius: 34)
             .frame(maxHeight: .infinity , alignment: .bottom)
             .ignoresSafeArea()
+            
             
             
         }
