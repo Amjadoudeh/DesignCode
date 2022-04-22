@@ -5,19 +5,20 @@ struct TabBar: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             
-            switch selectedTab {
-            case .home:
-                ContentView()
-            case .explore:
-                AccountView()
-            case .notifications:
-                ContentView()
-            case .library:
-                AccountView()
+            Group {
+                switch selectedTab {
+                case .home:
+                    ContentView()
+                case .explore:
+                    AccountView()
+                case .notifications:
+                    ContentView()
+                case .library:
+                    AccountView()
+                }
             }
-
-               // .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
             HStack {
                 ForEach(tabItems) { item in
                     Button {
