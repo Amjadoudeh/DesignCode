@@ -3,10 +3,20 @@ import SwiftUI
 struct TabBar: View {
     @State var selectedTab: Tab = .home
     var body: some View {
-       
         ZStack(alignment: .bottom) {
-            ContentView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            switch selectedTab {
+            case .home:
+                ContentView()
+            case .explore:
+                AccountView()
+            case .notifications:
+                ContentView()
+            case .library:
+                AccountView()
+            }
+
+               // .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             HStack {
                 ForEach(tabItems) { item in
