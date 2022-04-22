@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State var selectedTab: Tab = .home
+    @State var hoverColor: Color = .teal
     var body: some View {
         ZStack(alignment: .bottom) {
             
@@ -24,6 +25,7 @@ struct TabBar: View {
                     Button {
                         withAnimation {
                             selectedTab = item.tab
+                            hoverColor = item.color
                         }
                         
                     } label: {
@@ -55,7 +57,7 @@ struct TabBar: View {
                         Spacer()
                         Spacer()
                     }
-                    Circle().fill(.pink).frame(width: 80)
+                    Circle().fill(hoverColor).frame(width: 80)
                     if selectedTab == .home { Spacer() }
                     if selectedTab == .explore {
                         Spacer()
