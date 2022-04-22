@@ -8,22 +8,20 @@ struct TabBar: View {
 
             HStack {
                 Spacer()
-                VStack(spacing: 0) {
-                    Image(systemName: "house")
-                        .symbolVariant(.fill)
-                        .font(.body.bold())
-                    Text("Home")
-                        .font(.caption2)
+                ForEach(tabItems) { item in
+                    VStack(spacing: 0) {
+                        Image(systemName: item.icon)
+                            .symbolVariant(.fill)
+                            .font(.body.bold())
+                            .frame(width: 44 , height: 30)
+                        Text(item.text)
+                            .font(.caption2)
+                    }
+                    // just to fix the size of each
+                    .frame(maxWidth: .infinity)
+                    Spacer()
                 }
-                Spacer()
-                VStack(spacing: 0) {
-                    Image(systemName: "person")
-                        .symbolVariant(.fill)
-                        .font(.body.bold())
-                    Text("Account")
-                        .font(.caption2)
-                }
-                Spacer()
+                
             }
             .padding(.top, 14)
             .frame(height: 88 , alignment: .top)
