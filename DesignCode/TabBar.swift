@@ -42,6 +42,7 @@ struct TabBar: View {
                         .frame(maxWidth: .infinity)
                     }
                     .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
+                    .blendMode(selectedTab == item.tab ? .overlay : .normal)
                 }
             }
             .padding(.horizontal, 8)
