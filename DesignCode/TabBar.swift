@@ -22,7 +22,10 @@ struct TabBar: View {
             HStack {
                 ForEach(tabItems) { item in
                     Button {
-                        selectedTab = item.tab
+                        withAnimation {
+                            selectedTab = item.tab
+                        }
+                        
                     } label: {
                         VStack(spacing: 0) {
                             Image(systemName: item.icon)
@@ -43,9 +46,9 @@ struct TabBar: View {
             .padding(.top, 14)
             .frame(height: 88 , alignment: .top)
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
+            /// using the background to creat a circle and make the hover effect by moving it
             .background(
                 HStack {
-                    
                     if selectedTab == .library { Spacer() }
                     if selectedTab == .explore { Spacer() }
                     if selectedTab == .notifications {
