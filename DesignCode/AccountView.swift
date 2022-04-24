@@ -52,7 +52,7 @@ struct AccountView: View {
     
     var menu: some View {
         Section {
-            NavigationLink(destination: ContentView()) {
+            NavigationLink(destination: HomeView()) {
                 Label("Settings",systemImage: "gear")
             }
             // just using different way to navigate!

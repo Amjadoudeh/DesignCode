@@ -2,8 +2,10 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
+    
     var body: some View {
         ZStack(alignment: .bottom) {
+            
             Group {
                 switch selectedTab {
                 case .home:
@@ -11,7 +13,7 @@ struct ContentView: View {
                 case .explore:
                     AccountView()
                 case .notifications:
-                    ContentView()
+                    HomeView()
                 case .library:
                     AccountView()
                 }

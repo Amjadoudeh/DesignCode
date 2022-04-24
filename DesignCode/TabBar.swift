@@ -5,29 +5,7 @@ struct TabBar: View {
     @State var hoverColor: Color = .teal
     var body: some View {
         HStack {
-            ForEach(tabItems) { item in
-                Button {
-                    withAnimation {
-                        selectedTab = item.tab
-                        hoverColor = item.color
-                    }
-                    
-                } label: {
-                    VStack(spacing: 0) {
-                        Image(systemName: item.icon)
-                            .symbolVariant(.fill)
-                            .font(.body.bold())
-                            .frame(width: 44 , height: 30)
-                        Text(item.text)
-                            .font(.caption2)
-                            .lineLimit(1)
-                    }
-                    // just to fix the size of each
-                    .frame(maxWidth: .infinity)
-                }
-                .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
-                .blendMode(selectedTab == item.tab ? .overlay : .normal)
-            }
+            buttons
         }
         .padding(.horizontal, 8)
         .padding(.top, 14)
@@ -35,53 +13,84 @@ struct TabBar: View {
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
         /// using the background to creat a circle and make the hover effect by moving it
         .background(
-            HStack {
-                if selectedTab == .library { Spacer() }
-                if selectedTab == .explore { Spacer() }
-                if selectedTab == .notifications {
-                    Spacer()
-                    Spacer()
-                }
-                Circle().fill(hoverColor).frame(width: 88)
-                if selectedTab == .home { Spacer() }
-                if selectedTab == .explore {
-                    Spacer()
-                    Spacer()
-                }
-                if selectedTab == .notifications { Spacer() }
-            }
-                .padding(.horizontal, 8)
+            background
         )
         /// drawing the line above the circle
         .overlay(
-            HStack {
-                if selectedTab == .library { Spacer() }
-                if selectedTab == .explore { Spacer() }
-                if selectedTab == .notifications {
-                    Spacer()
-                    Spacer()
-                }
-                Rectangle()
-                    .fill(hoverColor)
-                    .frame(width: 29, height: 5)
-                    .cornerRadius(30)
-                    .frame(width: 88)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                if selectedTab == .home { Spacer() }
-                if selectedTab == .explore {
-                    Spacer()
-                    Spacer()
-                }
-                if selectedTab == .notifications { Spacer() }
-            }
-                .padding(.horizontal, 8)
+            overlay
         )
         .strokeStyle(cornerRadius: 34)
         .frame(maxHeight: .infinity , alignment: .bottom)
         .ignoresSafeArea()
-        
-        
-        
+    }
+    
+    var buttons: some View {
+        ForEach(tabItems) { item in
+            Button {
+                withAnimation {
+                    selectedTab = item.tab
+                    hoverColor = item.color
+                }
+                
+            } label: {
+                VStack(spacing: 0) {
+                    Image(systemName: item.icon)
+                        .symbolVariant(.fill)
+                        .font(.body.bold())
+                        .frame(width: 44 , height: 30)
+                    Text(item.text)
+                        .font(.caption2)
+                        .lineLimit(1)
+                }
+                // just to fix the size of each
+                .frame(maxWidth: .infinity)
+            }
+            .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
+            .blendMode(selectedTab == item.tab ? .overlay : .normal)
+        }
+    }
+    
+    var background: some View {
+        HStack {
+            if selectedTab == .library { Spacer() }
+            if selectedTab == .explore { Spacer() }
+            if selectedTab == .notifications {
+                Spacer()
+                Spacer()
+            }
+            Circle().fill(hoverColor).frame(width: 88)
+            if selectedTab == .home { Spacer() }
+            if selectedTab == .explore {
+                Spacer()
+                Spacer()
+            }
+            if selectedTab == .notifications { Spacer() }
+        }
+        .padding(.horizontal, 8)
+    }
+    
+    var overlay: some View {
+        HStack {
+            if selectedTab == .library { Spacer() }
+            if selectedTab == .explore { Spacer() }
+            if selectedTab == .notifications {
+                Spacer()
+                Spacer()
+            }
+            Rectangle()
+                .fill(hoverColor)
+                .frame(width: 29, height: 5)
+                .cornerRadius(30)
+                .frame(width: 88)
+                .frame(maxHeight: .infinity, alignment: .top)
+            if selectedTab == .home { Spacer() }
+            if selectedTab == .explore {
+                Spacer()
+                Spacer()
+            }
+            if selectedTab == .notifications { Spacer() }
+        }
+        .padding(.horizontal, 8)
     }
 }
 
