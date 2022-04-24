@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		701C569828129D3E00C7BEE1 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C569728129D3E00C7BEE1 /* Tab.swift */; };
+		701C569A2815EE7900C7BEE1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C56992815EE7900C7BEE1 /* HomeView.swift */; };
 		708002322809B61F00ED9379 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708002312809B61F00ED9379 /* HexagonView.swift */; };
 		70800234280ED19400ED9379 /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70800233280ED19400ED9379 /* BlobView.swift */; };
 		70800236280F4C8900ED9379 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70800235280F4C8900ED9379 /* TabBar.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		701C569728129D3E00C7BEE1 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		701C56992815EE7900C7BEE1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		708002312809B61F00ED9379 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		70800233280ED19400ED9379 /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
 		70800235280F4C8900ED9379 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				70BFA44C2800EFF1002FD946 /* DesignCodeApp.swift */,
 				70BFA44E2800EFF1002FD946 /* ContentView.swift */,
+				701C56992815EE7900C7BEE1 /* HomeView.swift */,
 				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
 				701C569728129D3E00C7BEE1 /* Tab.swift */,
 				70800235280F4C8900ED9379 /* TabBar.swift */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701C569A2815EE7900C7BEE1 /* HomeView.swift in Sources */,
 				70EB0AA628061FDD002EC3CE /* AccountView.swift in Sources */,
 				708002322809B61F00ED9379 /* HexagonView.swift in Sources */,
 				70E846392803942100E648EE /* Styles.swift in Sources */,
