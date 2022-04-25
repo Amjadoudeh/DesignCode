@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		701C569828129D3E00C7BEE1 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C569728129D3E00C7BEE1 /* Tab.swift */; };
 		701C569A2815EE7900C7BEE1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C56992815EE7900C7BEE1 /* HomeView.swift */; };
+		707D4FF3281731FB00C0F636 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D4FF2281731FB00C0F636 /* FeaturedItem.swift */; };
 		708002322809B61F00ED9379 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708002312809B61F00ED9379 /* HexagonView.swift */; };
 		70800234280ED19400ED9379 /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70800233280ED19400ED9379 /* BlobView.swift */; };
 		70800236280F4C8900ED9379 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70800235280F4C8900ED9379 /* TabBar.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		701C569728129D3E00C7BEE1 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		701C56992815EE7900C7BEE1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		707D4FF2281731FB00C0F636 /* FeaturedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		708002312809B61F00ED9379 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		70800233280ED19400ED9379 /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
 		70800235280F4C8900ED9379 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				70800233280ED19400ED9379 /* BlobView.swift */,
 				708002312809B61F00ED9379 /* HexagonView.swift */,
+				707D4FF2281731FB00C0F636 /* FeaturedItem.swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				70800234280ED19400ED9379 /* BlobView.swift in Sources */,
 				70BFA44F2800EFF1002FD946 /* ContentView.swift in Sources */,
 				70BFA44D2800EFF1002FD946 /* DesignCodeApp.swift in Sources */,
+				707D4FF3281731FB00C0F636 /* FeaturedItem.swift in Sources */,
 				70800236280F4C8900ED9379 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
