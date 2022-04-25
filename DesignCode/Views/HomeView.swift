@@ -6,7 +6,7 @@ struct HomeView: View {
             FeaturedItem()
         }
         .overlay(
-           NavigationBar()
+           NavigationBar(title: "Featured")
         )
     }
 }
