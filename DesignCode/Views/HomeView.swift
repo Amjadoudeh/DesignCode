@@ -9,6 +9,7 @@ struct HomeView: View {
             ZStack {
                 Color.clear
                     .background(.ultraThinMaterial)
+                    .blur(radius: 10)
                 
                 Text("Featured")
                     .font(.largeTitle.bold())
