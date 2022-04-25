@@ -3,6 +3,8 @@ import SwiftUI
 struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
     @State var hoverColor: Color = .teal
+    @State var tabItemWidth: CGFloat = 0
+    
     var body: some View {
         HStack {
             buttons
@@ -47,6 +49,16 @@ struct TabBar: View {
             }
             .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
             .blendMode(selectedTab == item.tab ? .overlay : .normal)
+            .overlay(
+                GeometryReader{ proxy in
+//                    Text("\(proxy.size.width)")
+                    Color.clear.preference(key: TabPreferenceKey.self , value: proxy.size.width)
+                }
+            )
+            .onPreferenceChange(TabPreferenceKey.self) {
+                value in
+                tabItemWidth = value
+            }
         }
     }
     
@@ -58,7 +70,7 @@ struct TabBar: View {
                 Spacer()
                 Spacer()
             }
-            Circle().fill(hoverColor).frame(width: 88)
+            Circle().fill(hoverColor).frame(width: tabItemWidth)
             if selectedTab == .home { Spacer() }
             if selectedTab == .explore {
                 Spacer()
@@ -81,7 +93,7 @@ struct TabBar: View {
                 .fill(hoverColor)
                 .frame(width: 29, height: 5)
                 .cornerRadius(30)
-                .frame(width: 88)
+                .frame(width: tabItemWidth)
                 .frame(maxHeight: .infinity, alignment: .top)
             if selectedTab == .home { Spacer() }
             if selectedTab == .explore {
@@ -99,6 +111,7 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
             .preferredColorScheme(.light)
+.previewInterfaceOrientation(.portrait)
         TabBar()
             .preferredColorScheme(.dark)
     }
