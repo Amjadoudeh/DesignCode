@@ -85,6 +85,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		707D4FED2816BB2000C0F636 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				70BFA44E2800EFF1002FD946 /* ContentView.swift */,
+				70800235280F4C8900ED9379 /* TabBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		707D4FEE2816BB4B00C0F636 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
+				701C56992815EE7900C7BEE1 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		707D4FEF2816BB7100C0F636 /* Components  */ = {
+			isa = PBXGroup;
+			children = (
+				70800233280ED19400ED9379 /* BlobView.swift */,
+				708002312809B61F00ED9379 /* HexagonView.swift */,
+			);
+			path = "Components ";
+			sourceTree = "<group>";
+		};
+		707D4FF02816BBAA00C0F636 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				70E846382803942100E648EE /* Styles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		707D4FF12816BBB900C0F636 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				701C569728129D3E00C7BEE1 /* Tab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		70BFA4402800EFF1002FD946 = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				70BFA44C2800EFF1002FD946 /* DesignCodeApp.swift */,
-				70BFA44E2800EFF1002FD946 /* ContentView.swift */,
-				701C56992815EE7900C7BEE1 /* HomeView.swift */,
-				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
-				701C569728129D3E00C7BEE1 /* Tab.swift */,
-				70800235280F4C8900ED9379 /* TabBar.swift */,
-				708002312809B61F00ED9379 /* HexagonView.swift */,
-				70800233280ED19400ED9379 /* BlobView.swift */,
-				70E846382803942100E648EE /* Styles.swift */,
+				707D4FED2816BB2000C0F636 /* Navigation */,
+				707D4FEE2816BB4B00C0F636 /* Views */,
+				707D4FEF2816BB7100C0F636 /* Components  */,
+				707D4FF12816BBB900C0F636 /* Models */,
+				707D4FF02816BBAA00C0F636 /* Styles */,
 				70BFA4502800EFF2002FD946 /* Assets.xcassets */,
 				70BFA4522800EFF2002FD946 /* Preview Content */,
 			);
