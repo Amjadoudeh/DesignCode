@@ -19,9 +19,29 @@ struct NavigationBar: View {
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
+            
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .font(.body.weight(.bold))
+                    .foregroundColor(.secondary)
+                    .frame(width: 36, height: 36)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .strokeStyle(cornerRadius: 14)
+                
+                Image("Avatar Default")
+                    .resizable()
+                    .frame(width: 26, height: 26)
+                    .cornerRadius(10)
+                    .padding(8)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .strokeStyle(cornerRadius: 18)
+            }
+            .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+            .padding(.trailing, 20)
+            //TODO: styling the hstack
         }
             .frame(height: 70)
-        // to be able to push it to the top we have to use another frame
+// to be able to push it to the top we have to use another frame
             .frame(maxHeight: .infinity, alignment: .top)
     }
 }
