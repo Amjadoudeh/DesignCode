@@ -6,6 +6,7 @@ struct HomeView: View {
             FeaturedItem()
             Color.clear.frame(height: 1000)
         }
+        /// customising a safe area on the top to make a better display for the content
         .safeAreaInset(edge: .top, content: {
             Color.clear.frame(height: 70)
         })
