@@ -20,7 +20,7 @@ struct NavigationBar: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
             
-            HStack {
+            HStack(spacing: 16) {
                 Image(systemName: "magnifyingglass")
                     .font(.body.weight(.bold))
                     .foregroundColor(.secondary)
@@ -38,7 +38,6 @@ struct NavigationBar: View {
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
             .padding(.trailing, 20)
-            //TODO: styling the hstack
         }
             .frame(height: 70)
 // to be able to push it to the top we have to use another frame
