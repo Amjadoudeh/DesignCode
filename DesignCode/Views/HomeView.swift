@@ -4,7 +4,7 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             GeometryReader{ proxy in
-                Text("\(proxy.frame(in: .global).minY)")
+                Text("\(proxy.frame(in: .local).minY)")
                 
             }
             FeaturedItem()
