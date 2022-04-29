@@ -49,6 +49,7 @@ struct TabBar: View {
             }
             .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
             .blendMode(selectedTab == item.tab ? .overlay : .normal)
+/// using the GeometryReader & PreferenceKey  to position the overlay on landspace view
             .overlay(
                 GeometryReader{ proxy in
 //                    Text("\(proxy.size.width)")
