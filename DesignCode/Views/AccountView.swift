@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AccountView: View {
-    // sitting a state for deleting
+/// sitting a state for deleting
     @State var isDeleted = false
     @State var isPinned = false
     
@@ -27,7 +27,7 @@ struct AccountView: View {
                 .foregroundStyle(.blue, .blue.opacity(0.3))
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
-            // will make an intersting shape using modifiers
+        /// will make an intersting shape using modifiers
                 .background(
                     HexagonView()
                                 .offset(x: -50, y: -100)
@@ -67,7 +67,7 @@ struct AccountView: View {
             }
         }
         .accentColor(.primary)
-        .listRowSeparatorTint(.blue) //Changing the color of the separator
+        .listRowSeparatorTint(.blue) ///Changing the color of the separator
         .listRowSeparator(.hidden)
     }
     

@@ -23,6 +23,7 @@ struct NavigationBar: View {
                     .strokeStyle(cornerRadius: 14)
                 
                 Image("Avatar Default")
+/// changing the order of the modifiers could change the design totally
                     .resizable()
                     .frame(width: 26, height: 26)
                     .cornerRadius(10)

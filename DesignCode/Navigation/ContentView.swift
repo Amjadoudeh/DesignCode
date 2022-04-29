@@ -5,7 +5,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            
+/// using switch instead of using if 
                 switch selectedTab {
                 case .home:
                     HomeView()
@@ -18,6 +18,7 @@ struct ContentView: View {
                 }
             TabBar()
         }
+        /// customise a safe area for the TabBar
         .safeAreaInset(edge: .bottom, content: {
             Color.clear.frame(height: 44)
         })
