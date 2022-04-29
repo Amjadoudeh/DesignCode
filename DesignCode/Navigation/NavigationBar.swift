@@ -1,16 +1,10 @@
-//
-//  NavigationBar.swift
-//  DesignCode
-//
-//  Created by Amjad Oudeh on 25.04.22.
-//
-
 import SwiftUI
 
 struct NavigationBar: View {
     var title = ""
     var body: some View {
         ZStack {
+/// adding the blur modifire just rto break the edges of the container which made by background modifire using the ulteaThinMaterial ( change the color to red to try it)
             Color.clear
                 .background(.ultraThinMaterial)
                 .blur(radius: 10)
@@ -43,6 +37,7 @@ struct NavigationBar: View {
 // to be able to push it to the top we have to use another frame
             .frame(maxHeight: .infinity, alignment: .top)
     }
+    
 }
 
 struct NavigationBar_Previews: PreviewProvider {
