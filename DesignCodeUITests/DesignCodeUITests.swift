@@ -1,10 +1,3 @@
-//
-//  DesignCodeUITests.swift
-//  DesignCodeUITests
-//
-//  Created by Amjad Oudeh on 09.04.22.
-//
-
 import XCTest
 
 class DesignCodeUITests: XCTestCase {

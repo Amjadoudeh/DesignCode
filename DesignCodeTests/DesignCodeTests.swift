@@ -1,10 +1,3 @@
-//
-//  DesignCodeTests.swift
-//  DesignCodeTests
-//
-//  Created by Amjad Oudeh on 09.04.22.
-//
-
 import XCTest
 @testable import DesignCode
 
