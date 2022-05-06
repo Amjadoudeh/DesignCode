@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct NavigationBar: View {
-    var title = ""
+
+    let title: LocalizedStringKey
+    
     var body: some View {
         ZStack {
 /// adding the blur modifire just rto break the edges of the container which made by background modifire using the ulteaThinMaterial ( change the color to red to try it)
@@ -43,6 +45,6 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar(title: "Featured")
+        NavigationBar(title: "your title")
     }
 }

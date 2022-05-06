@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  DesignCode
+
+  Created by Amjad Oudeh on 06.05.22.
+  
+*/
+
+"FeaturedItem.mainTitle" = "سوفت لنظام ١٥";
+"FeaturedItem.description" = "أنشئ تطبيق iOS لنظام iOS 15 بتخطيطات ورسوم متحركة و ...";
+"FeaturedItem.duration" = "٢٠ قسمًا - ٣ ساعات";
+"MainView.navTitle" = "متميز";

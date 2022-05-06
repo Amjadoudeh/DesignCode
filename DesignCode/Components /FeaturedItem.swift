@@ -1,16 +1,7 @@
-//
-//  FeaturedItem.swift
-//  DesignCode
-//
-//  Created by Amjad Oudeh on 25.04.22.
-//
-
 import SwiftUI
 
 struct FeaturedItem: View {
-    let mainTitle: LocalizedStringKey = "mainTitle"
-    let description: LocalizedStringKey = "description"
-    let duration: LocalizedStringKey = "duration"
+    private typealias Localization = LocalizationKeys.FeaturedItem
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
@@ -23,15 +14,15 @@ struct FeaturedItem: View {
                 .padding(9)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .strokeStyle(cornerRadius: 20)
-            Text(mainTitle)
+            Text(Localization.mainTitle)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [.primary,.primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text(duration)
+            Text(Localization.duration)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            Text(description)
+            Text(Localization.description)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
@@ -57,6 +48,7 @@ struct FeaturedItem: View {
         )
     }
 }
+
 
 struct FeaturedItem_Previews: PreviewProvider {
     static var previews: some View {

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  DesignCode
+
+  Created by Amjad Oudeh on 06.05.22.
+  
+*/
+
+"FeaturedItem.mainTitle" = "SwiftUI for iOS 15";
+"FeaturedItem.description" = "Build an iOS app for iOS 15 with custom layouts, animations and ...";
+"FeaturedItem.duration" = "20 sections - 3 hours";
+"MainView.navTitle" = "Featured";
