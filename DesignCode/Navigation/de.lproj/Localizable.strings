@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  DesignCode
+
+  Created by Amjad Oudeh on 06.05.22.
+  
+*/
+
+"mainTitle" = "SwiftUI für iOS 15";
+"description" = "Erstellen Sie eine iOS-App für iOS 15 mit benutzerdefinierten Layouts, Animationen und ...";
+"duration" = "20 Abschnitte - 3 Stunden";

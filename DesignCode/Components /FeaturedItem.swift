@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FeaturedItem: View {
+    let mainTitle: LocalizedStringKey = "mainTitle"
+    let description: LocalizedStringKey = "description"
+    let duration: LocalizedStringKey = "duration"
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
@@ -19,15 +23,15 @@ struct FeaturedItem: View {
                 .padding(9)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .strokeStyle(cornerRadius: 20)
-            Text("SwiftUI for iOS 15")
+            Text(mainTitle)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [.primary,.primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text("20 sections - 3 hours".uppercased())
+            Text(duration)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            Text("Build an iOS app for iOS 15 with custom layouts,animations and ...")
+            Text(description)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
