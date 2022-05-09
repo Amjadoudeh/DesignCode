@@ -3,6 +3,7 @@ import SwiftUI
 struct NavigationBar: View {
 
     let title: LocalizedStringKey
+    @Binding var hasScrolled: Bool
     
     var body: some View {
         ZStack {
@@ -10,11 +11,13 @@ struct NavigationBar: View {
             Color.clear
                 .background(.ultraThinMaterial)
                 .blur(radius: 10)
-            
+                .opacity(hasScrolled ? 0 : 1)
             Text(title)
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
+                .padding(.top, 20)
+                .offset(y: hasScrolled ? 0 : -4)
             
             HStack(spacing: 16) {
                 Image(systemName: "magnifyingglass")
@@ -35,8 +38,10 @@ struct NavigationBar: View {
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
             .padding(.trailing, 20)
+            .padding(.top, 20)
+            .offset(y: hasScrolled ? 0 : -4)
         }
-            .frame(height: 70)
+        .frame(height: hasScrolled ? 70 : 40)
 // to be able to push it to the top we have to use another frame
             .frame(maxHeight: .infinity, alignment: .top)
     }
@@ -45,6 +50,6 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar(title: "your title")
+        NavigationBar(title: "your title", hasScrolled: .constant(false))
     }
 }

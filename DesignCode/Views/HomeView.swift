@@ -32,8 +32,8 @@ struct HomeView: View {
             Color.clear.frame(height: 70)
         })
         .overlay(
-            NavigationBar(title: LocalizationKeys.MainView.navtitle)
-                .opacity(hasScrolled ? 1 : 0)
+            NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
+                
         )
     }
 }
