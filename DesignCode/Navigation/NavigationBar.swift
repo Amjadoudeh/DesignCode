@@ -7,7 +7,7 @@ struct NavigationBar: View {
     
     var body: some View {
         ZStack {
-/// adding the blur modifire just rto break the edges of the container which made by background modifire using the ulteaThinMaterial ( change the color to red to try it)
+/// adding the blur modifire just to break the edges of the container which made by background modifire using the ulteaThinMaterial ( change the color to red to try it)
             Color.clear
                 .background(.ultraThinMaterial)
                 .blur(radius: 10)
