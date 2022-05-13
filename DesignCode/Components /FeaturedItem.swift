@@ -39,14 +39,6 @@ struct FeaturedItem: View {
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
         .strokeStyle()//after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
         .padding(.horizontal,20)
-        
-        .overlay( // so now we 3 layers of background
-            Image(course.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 230)
-                .offset(x: 35, y: -80)
-        )
     }
 }
 
