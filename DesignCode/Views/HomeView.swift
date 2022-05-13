@@ -11,7 +11,6 @@ struct HomeView: View {
                 featured
                 /// the point of adding the clear color with the frame is to show the scroll bar
                 Color.clear.frame(height: 1000)
-                
             }
             .coordinateSpace(name: "scroll")
             .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
@@ -29,7 +28,6 @@ struct HomeView: View {
             })
             .overlay(
                 NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
-                
             )
         }
     }
