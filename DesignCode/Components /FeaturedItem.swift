@@ -36,9 +36,7 @@ struct FeaturedItem: View {
         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
         .strokeStyle()//after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
         .padding(.horizontal,20)
-        .background(
-            Image("Blob 1")
-                .offset(x: 250, y: -100)) // transform the image
+        
         .overlay( // so now we 3 layers of background
             Image("Illustration 5")
                 .resizable()

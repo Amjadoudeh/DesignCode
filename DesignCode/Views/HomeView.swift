@@ -12,6 +12,7 @@ struct HomeView: View {
             .frame(height: 0)
             /// adding a frame to get rid of the default hight of the Geometry
             
+            /// Creating horizental Navigation
             TabView {
                 ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
                     FeaturedItem()
@@ -19,6 +20,9 @@ struct HomeView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 430)
+            .background(
+                Image("Blob 1")
+                    .offset(x: 250, y: -100)) // transform the image
             
             /// the point of adding the clear color with the frame is to show the scroll bar
             Color.clear.frame(height: 1000)
