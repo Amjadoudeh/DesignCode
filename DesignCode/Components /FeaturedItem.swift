@@ -37,7 +37,6 @@ struct FeaturedItem: View {
         .padding(.vertical, 20)
         .frame(width: nil, height: 350.0)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
-        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
         .strokeStyle()//after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
         .padding(.horizontal,20)
         
