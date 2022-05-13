@@ -43,20 +43,27 @@ struct HomeView: View {
     }
     
     var featured: some View {
+        
         TabView {
             ForEach(courses) { course in
                 GeometryReader { proxy in
+                    let minX = proxy.frame(in: .global).minX
+                    
                 FeaturedItem(course: course)
                         .padding(.vertical, 40)
-                        .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -15), axis: (x: 0, y: 2, z: 10))
+                        .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                        .blur(radius: abs(minX / 50))
                     //Text("\(proxy.frame(in: .global).minX)")
                         .overlay( // so now we 3 layers of background
                             Image(course.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: 230)
+                                .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                                 .offset(x: 35, y: -80)
+                                .offset(x: minX / 2)
+                                
                         )
                 }
             }
