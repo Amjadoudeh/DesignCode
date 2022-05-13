@@ -36,7 +36,7 @@ struct HomeView: View {
     var scrollDetection: some View {
 ///to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
         GeometryReader{ proxy in
-            Text("\(proxy.frame(in: .named("scroll")).minY)")
+            //Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0) /// adding a frame to get rid of the default hight of the Geometry
@@ -48,7 +48,9 @@ struct HomeView: View {
                 GeometryReader { proxy in
                 FeaturedItem(course: item)
                         .padding(.vertical, 40)
+                        .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / 15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                    //Text("\(proxy.frame(in: .global).minX)")
                 }
             }
         }
