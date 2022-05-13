@@ -48,7 +48,7 @@ struct HomeView: View {
                 GeometryReader { proxy in
                 FeaturedItem(course: item)
                         .padding(.vertical, 40)
-                        .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / 15), axis: (x: 0, y: 2, z: 10))
+                        .rotation3DEffect(.degrees(proxy.frame(in: .global).minX / -15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                     //Text("\(proxy.frame(in: .global).minX)")
                 }
