@@ -12,7 +12,14 @@ struct HomeView: View {
             .frame(height: 0)
             /// adding a frame to get rid of the default hight of the Geometry
             
-            FeaturedItem()
+            TabView {
+                ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                    FeaturedItem()
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(height: 430)
+            
             /// the point of adding the clear color with the frame is to show the scroll bar
             Color.clear.frame(height: 1000)
             
