@@ -14,8 +14,8 @@ struct HomeView: View {
             
             /// Creating horizental Navigation
             TabView {
-                ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                    FeaturedItem()
+                ForEach(courses) { item in
+                    FeaturedItem(course: item)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))

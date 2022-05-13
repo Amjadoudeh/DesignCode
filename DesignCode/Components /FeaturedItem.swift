@@ -2,11 +2,12 @@ import SwiftUI
 
 struct FeaturedItem: View {
     private typealias Localization = LocalizationKeys.FeaturedItem
+    var course: Course = courses[0]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
-            Image("Logo 2")
+            Image(course.logo)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 26.0, height: 26.0)
@@ -14,15 +15,18 @@ struct FeaturedItem: View {
                 .padding(9)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .strokeStyle(cornerRadius: 20)
-            Text(Localization.mainTitle)
-                .font(.largeTitle)
+          //   Text(Localization.mainTitle)
+            Text(course.title)
+                .font(.title)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [.primary,.primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text(Localization.duration)
+            // Text(Localization.duration)
+            Text(course.subtitle)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            Text(Localization.description)
+            // Text(Localization.description)
+            Text(course.description)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
@@ -38,7 +42,7 @@ struct FeaturedItem: View {
         .padding(.horizontal,20)
         
         .overlay( // so now we 3 layers of background
-            Image("Illustration 5")
+            Image(course.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 230)
