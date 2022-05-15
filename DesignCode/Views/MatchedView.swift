@@ -15,10 +15,11 @@ struct MatchedView: View {
         ZStack {
             if !show {
             Text("SHow 1 ")
-                    
+                    .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
             } else {
                 Text("Show 2 ")
+                    .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
