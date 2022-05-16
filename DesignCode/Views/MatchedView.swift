@@ -7,7 +7,7 @@ struct MatchedView: View {
     var body: some View {
         ZStack {
             if !show {
-                VStack {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("SHow 1")
                         .font(.largeTitle.weight(.bold))
                         .matchedGeometryEffect(id: "title", in: namespace)
@@ -16,10 +16,15 @@ struct MatchedView: View {
                         .font(.footnote.weight(.semibold))
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
                 }
+                .padding(20)
                 .foregroundStyle(.white)
-                .background(.red)
+                .background(
+                    Color.red.matchedGeometryEffect(id: "background", in: namespace)
+                )
+                .padding(20)
             } else {
-                VStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    Spacer()
                     Text("20 Sections - 3 hours".uppercased())
                         .font(.footnote.weight(.semibold))
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
@@ -28,8 +33,11 @@ struct MatchedView: View {
                         .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .padding(20)
                 .foregroundStyle(.black)
-                .background(.blue)
+                .background(
+                    Color.blue.matchedGeometryEffect(id: "background", in: namespace)
+                )
             }
         }
         .onTapGesture {
