@@ -11,7 +11,7 @@ struct MatchedView: View {
                     Text("SHow 1")
                         .font(.largeTitle.weight(.bold))
                         .matchedGeometryEffect(id: "title", in: namespace)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text("20 Sections - 3 hours".uppercased())
                         .font(.footnote.weight(.semibold))
                         .matchedGeometryEffect(id: "subtitle", in: namespace)
@@ -27,6 +27,10 @@ struct MatchedView: View {
                         .aspectRatio(contentMode: .fill)
                         .matchedGeometryEffect(id: "background", in: namespace)
                 )
+                .mask(
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .matchedGeometryEffect(id: "mask", in: namespace)
+                )
                 .padding(20)
             } else {
                 VStack(alignment: .leading, spacing: 12) {
@@ -40,7 +44,7 @@ struct MatchedView: View {
                     Text("SHow 1")
                         .font(.largeTitle.weight(.bold))
                         .matchedGeometryEffect(id: "title", in: namespace)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .padding(20)
                 .foregroundStyle(.black)
@@ -49,6 +53,10 @@ struct MatchedView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .matchedGeometryEffect(id: "background", in: namespace)
+                )
+                .mask(
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .matchedGeometryEffect(id: "mask", in: namespace)
                 )
             }
         }
