@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    @State var hoverColor: Color = .teal
+    @State var hoverColor: Color = .purple
     @State var tabItemWidth: CGFloat = 0
     
     var body: some View {
