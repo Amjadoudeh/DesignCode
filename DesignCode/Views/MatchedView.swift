@@ -8,6 +8,7 @@ struct MatchedView: View {
         ZStack {
             if !show {
                 VStack(alignment: .leading, spacing: 12) {
+                    Spacer()
                     Text("SHow 1")
                         .font(.largeTitle.weight(.bold))
                         .matchedGeometryEffect(id: "title", in: namespace)
@@ -37,6 +38,7 @@ struct MatchedView: View {
                     RoundedRectangle(cornerRadius: 30, style: .continuous)
                         .matchedGeometryEffect(id: "mask", in: namespace)
                 )
+                .frame(height: 300)
                 .padding(20)
             } else {
                 VStack(alignment: .leading, spacing: 12) {
