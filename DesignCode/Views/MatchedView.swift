@@ -41,37 +41,40 @@ struct MatchedView: View {
                 .frame(height: 300)
                 .padding(20)
             } else {
-                VStack(alignment: .leading, spacing: 12) {
-                    Spacer()
-                    Text("Bulid an iOS app for iOS 15 with custom layouts, animation and ... ")
-                        .font(.footnote)
-                        .matchedGeometryEffect(id: "text", in: namespace)
-                    Text("20 Sections - 3 hours".uppercased())
-                        .font(.footnote.weight(.semibold))
-                        .matchedGeometryEffect(id: "subtitle", in: namespace)
-                    Text("SHow 1")
-                        .font(.largeTitle.weight(.bold))
-                        .matchedGeometryEffect(id: "title", in: namespace)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Spacer()
+                        Text("Bulid an iOS app for iOS 15 with custom layouts, animation and ... ")
+                            .font(.footnote)
+                            .matchedGeometryEffect(id: "text", in: namespace)
+                        Text("20 Sections - 3 hours".uppercased())
+                            .font(.footnote.weight(.semibold))
+                            .matchedGeometryEffect(id: "subtitle", in: namespace)
+                        Text("SHow 1")
+                            .font(.largeTitle.weight(.bold))
+                            .matchedGeometryEffect(id: "title", in: namespace)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(height: 500)
+                    .padding(20)
+                    .foregroundStyle(.black)
+                    .background(
+                        Image("Illustration 9")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .matchedGeometryEffect(id: "image", in: namespace)
+                    )
+                    .background(
+                        Image("Background 5")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .matchedGeometryEffect(id: "background", in: namespace)
+                    )
+                    .mask(
+                        RoundedRectangle(cornerRadius: 30, style: .continuous)
+                            .matchedGeometryEffect(id: "mask", in: namespace)
+                )
                 }
-                .padding(20)
-                .foregroundStyle(.black)
-                .background(
-                    Image("Illustration 9")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .matchedGeometryEffect(id: "image", in: namespace)
-                )
-                .background(
-                    Image("Background 5")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .matchedGeometryEffect(id: "background", in: namespace)
-                )
-                .mask(
-                    RoundedRectangle(cornerRadius: 30, style: .continuous)
-                        .matchedGeometryEffect(id: "mask", in: namespace)
-                )
             }
         }
         .onTapGesture {
