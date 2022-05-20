@@ -7,20 +7,29 @@ struct MatchedView: View {
     var body: some View {
         ZStack {
             if !show {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack {
                     Spacer()
-                    Text("SHow 1")
-                        .font(.largeTitle.weight(.bold))
-                        .matchedGeometryEffect(id: "title", in: namespace)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("SHow 1")
+                            .font(.largeTitle.weight(.bold))
+                            .matchedGeometryEffect(id: "title", in: namespace)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("20 Sections - 3 hours".uppercased())
-                        .font(.footnote.weight(.semibold))
-                        .matchedGeometryEffect(id: "subtitle", in: namespace)
-                    Text("Bulid an iOS app for iOS 15 with custom layouts, animation and ... ")
-                        .font(.footnote)
-                        .matchedGeometryEffect(id: "text", in: namespace)
+                        Text("20 Sections - 3 hours".uppercased())
+                            .font(.footnote.weight(.semibold))
+                            .matchedGeometryEffect(id: "subtitle", in: namespace)
+                        Text("Bulid an iOS app for iOS 15 with custom layouts, animation and ... ")
+                            .font(.footnote)
+                            .matchedGeometryEffect(id: "text", in: namespace)
+                    }
+                    .padding(20)
+                    .background(
+                    Rectangle()
+                        .fill(.ultraThinMaterial)
+                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                        .blur(radius: 30)
+                        .matchedGeometryEffect(id: "blur", in: namespace)
+                    )
                 }
-                .padding(20)
                 .foregroundStyle(.white)
                 .background(
                     Image("Illustration 9")
@@ -67,7 +76,7 @@ struct MatchedView: View {
                                 .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
                                 .matchedGeometryEffect(id: "blur", in: namespace)
                             )
-                            .offset(y: 100)
+                            .offset(y: 200)
                     )
                     .frame(height: 500)
                     .padding(20)
