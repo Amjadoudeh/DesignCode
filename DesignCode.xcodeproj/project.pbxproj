@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700D99702837A505007D3614 /* PreferenceKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D996F2837A505007D3614 /* PreferenceKeysTests.swift */; };
 		701C569828129D3E00C7BEE1 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C569728129D3E00C7BEE1 /* Tab.swift */; };
 		701C569A2815EE7900C7BEE1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C56992815EE7900C7BEE1 /* HomeView.swift */; };
 		7034A908281BEAE800AA9275 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034A907281BEAE800AA9275 /* PreferenceKeys.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700D996F2837A505007D3614 /* PreferenceKeysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeysTests.swift; sourceTree = "<group>"; };
 		701C569728129D3E00C7BEE1 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		701C56992815EE7900C7BEE1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7034A907281BEAE800AA9275 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		700D996E2837A4B9007D3614 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+				700D996F2837A505007D3614 /* PreferenceKeysTests.swift */,
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
 		707D4FED2816BB2000C0F636 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		70BFA45C2800EFF2002FD946 /* DesignCodeTests */ = {
 			isa = PBXGroup;
 			children = (
+				700D996E2837A4B9007D3614 /* Models  */,
 				70BFA45D2800EFF2002FD946 /* DesignCodeTests.swift */,
 			);
 			path = DesignCodeTests;
@@ -378,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700D99702837A505007D3614 /* PreferenceKeysTests.swift in Sources */,
 				70BFA45E2800EFF2002FD946 /* DesignCodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +617,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P569KTXYRS;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "amjad.oudeh-gmail.com.DesignCodeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,7 +637,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P569KTXYRS;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "amjad.oudeh-gmail.com.DesignCodeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

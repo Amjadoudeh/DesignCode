@@ -51,9 +51,11 @@ struct TabBar: View {
             .blendMode(selectedTab == item.tab ? .overlay : .normal)
 /// using the GeometryReader & PreferenceKey  to position the overlay on landspace view
             .overlay(
+                // need to be checked again
                 GeometryReader{ proxy in
-//                    Text("\(proxy.size.width)")
+                    // Text("\(proxy.size.width)")
                     Color.clear.preference(key: TabPreferenceKey.self , value: proxy.size.width)
+                    // tabItemWidth = proxy.size.width - no working because it needs to conform to a View
                 }
             )
             .onPreferenceChange(TabPreferenceKey.self) {
