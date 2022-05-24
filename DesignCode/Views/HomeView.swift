@@ -2,6 +2,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State var hasScrolled = false
+    @Namespace var namespace
+    @State var show = false
     
     var body: some View {
         ZStack {
@@ -11,7 +13,15 @@ struct HomeView: View {
                 /// Creating horizental Navigation
                 featured
                 /// the point of adding the clear color with the frame is to show the scroll bar
-                Color.clear.frame(height: 1000)
+                if !show {
+                CourseItem(namespace: namespace, show: $show)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                                show.toggle()
+                            }
+                            
+                        }
+                }
             }
             .coordinateSpace(name: "scroll")
             /// customising a safe area on the top to make a better display for the content
@@ -21,6 +31,10 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
             )
+            if show {
+                CourseView(namespace: namespace, show: $show)
+            }
+            
         }
     }
     
