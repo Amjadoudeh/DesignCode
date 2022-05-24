@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CourseItem: View {
-    @Namespace var namespace
+    var namespace: Namespace.ID
     @Binding var show: Bool
     
     var body: some View {
@@ -58,7 +58,9 @@ struct CourseItem: View {
 }
 
 struct CourseItem_Previews: PreviewProvider {
+    @Namespace static var namespace
+    
     static var previews: some View {
-        CourseItem(show: .constant(true))
+        CourseItem(namespace: namespace, show: .constant(true))
     }
 }
