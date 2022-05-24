@@ -12,7 +12,13 @@ struct HomeView: View {
                 scrollDetection
                 /// Creating horizental Navigation
                 featured
-                /// the point of adding the clear color with the frame is to show the scroll bar
+                
+                Text("Courses".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                
                 if !show {
                 CourseItem(namespace: namespace, show: $show)
                         .onTapGesture {
