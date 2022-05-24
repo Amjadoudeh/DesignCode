@@ -3,6 +3,7 @@ import SwiftUI
 struct CourseView: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
+    @Binding var course: Course
     
     var body: some View {
         ZStack {
@@ -38,33 +39,33 @@ struct CourseView: View {
         .frame(height: 500)
         .foregroundStyle(.black)
         .background(
-            Image("Illustration 9")
+            Image(course.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .matchedGeometryEffect(id: "image", in: namespace)
+                .matchedGeometryEffect(id: "image\(course.index)", in: namespace)
         )
         .background(
-            Image("Background 5")
+            Image(course.background)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .matchedGeometryEffect(id: "background", in: namespace)
+                .matchedGeometryEffect(id: "background\(course.index)", in: namespace)
         )
         .mask(
             RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .matchedGeometryEffect(id: "mask", in: namespace)
+                .matchedGeometryEffect(id: "mask\(course.index)", in: namespace)
         )
         .overlay(
             VStack (alignment: .leading, spacing: 12) {
-                Text("SHow 1")
+                Text(course.title)
                     .font(.largeTitle.weight(.bold))
-                    .matchedGeometryEffect(id: "title", in: namespace)
+                    .matchedGeometryEffect(id: "title\(course.index)", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text("20 Sections - 3 hours".uppercased())
                     .font(.footnote.weight(.semibold))
-                    .matchedGeometryEffect(id: "subtitle", in: namespace)
+                    .matchedGeometryEffect(id: "subtitle\(course.index)", in: namespace)
                 Text("Bulid an iOS app for iOS 15 with custom layouts, animation and ... ")
                     .font(.footnote)
-                    .matchedGeometryEffect(id: "text", in: namespace)
+                    .matchedGeometryEffect(id: "text\(course.index)", in: namespace)
                 
                 Divider()
                 HStack {
