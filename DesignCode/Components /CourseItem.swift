@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CourseItem: View {
     @Namespace var namespace
-    @State var show = false
+    @Binding var show: Bool
     
     var body: some View {
         VStack {
@@ -59,6 +59,6 @@ struct CourseItem: View {
 
 struct CourseItem_Previews: PreviewProvider {
     static var previews: some View {
-        CourseItem()
+        CourseItem(show: .constant(true))
     }
 }
