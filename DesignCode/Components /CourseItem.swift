@@ -1,10 +1,3 @@
-//
-//  CourseItem.swift
-//  DesignCode
-//
-//  Created by Amjad Oudeh on 24.05.22.
-//
-
 import SwiftUI
 
 struct CourseItem: View {
