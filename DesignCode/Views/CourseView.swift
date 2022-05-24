@@ -96,6 +96,6 @@ struct CourseView_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        CourseItem(namespace: namespace, show: .constant(true))
+        CourseItem(namespace: namespace, show: .constant(true), course: courses[0])
     }
 }

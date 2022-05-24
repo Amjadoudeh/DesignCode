@@ -3,12 +3,15 @@ import SwiftUI
 struct CourseItem: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
+    var course: Course
     
     var body: some View {
         VStack {
+            
             Spacer()
+            
             VStack(alignment: .leading, spacing: 12) {
-                Text("SHow 1")
+                Text(course.title)
                     .font(.largeTitle.weight(.bold))
                     .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -30,13 +33,13 @@ struct CourseItem: View {
         }
         .foregroundStyle(.white)
         .background(
-            Image("Illustration 9")
+            Image(course.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .matchedGeometryEffect(id: "image", in: namespace)
         )
         .background(
-            Image("Background 5")
+            Image(course.background)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .matchedGeometryEffect(id: "background", in: namespace)
@@ -54,6 +57,6 @@ struct CourseItem_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        CourseItem(namespace: namespace, show: .constant(true))
+        CourseItem(namespace: namespace, show: .constant(true), course: courses[0])
     }
 }

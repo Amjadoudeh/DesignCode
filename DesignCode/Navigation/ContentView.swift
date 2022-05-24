@@ -14,7 +14,7 @@ struct ContentView: View {
                 case .notifications:
                     HomeView()
                 case .library:
-                    MatchedView()
+                    HomeView()
                 }
             TabBar()
         }

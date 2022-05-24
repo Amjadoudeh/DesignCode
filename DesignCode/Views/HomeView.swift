@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @State var hasScrolled = false
-    @Namespace var namespace
     @State var show = false
+    
+    @Namespace var namespace
     
     var body: some View {
         ZStack {
@@ -17,7 +19,7 @@ struct HomeView: View {
                     .sectionTitleModifier()
                 
                 if !show {
-                CourseItem(namespace: namespace, show: $show)
+                    CourseItem(namespace: namespace, show: $show, course: courses[0])
                         .onTapGesture {
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                                 show.toggle()
@@ -60,7 +62,6 @@ struct HomeView: View {
     }
     
     var featured: some View {
-        
         TabView {
             ForEach(courses) { course in
                 GeometryReader { proxy in
@@ -80,7 +81,6 @@ struct HomeView: View {
                                 .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                                 .offset(x: 35, y: -80)
                                 .offset(x: minX / 2)
-                                
                         )
                 }
             }
@@ -90,7 +90,6 @@ struct HomeView: View {
         .background(
             Image("Blob 1")
                 .offset(x: 250, y: -100)) // transform the image
-        
     }
 }
 
