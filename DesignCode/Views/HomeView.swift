@@ -14,10 +14,7 @@ struct HomeView: View {
                 featured
                 
                 Text("Courses".uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 20)
+                    .sectionTitleModifier()
                 
                 if !show {
                 CourseItem(namespace: namespace, show: $show)
