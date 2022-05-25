@@ -4,7 +4,7 @@ struct HomeView: View {
     
     @State var hasScrolled = false
     @State var show = false
-    var course: Course
+    @State var selectedCourse: Course = courses[0]
     
     @Namespace var namespace
     
@@ -20,7 +20,7 @@ struct HomeView: View {
                     .sectionTitleModifier()
                 
                 if !show {
-                    CourseItem(namespace: namespace, show: $show, course: course)
+                    CourseItem(namespace: namespace, show: $show, course: courses[0])
                         .onTapGesture {
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                                 show.toggle()
@@ -38,7 +38,7 @@ struct HomeView: View {
                 NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
             )
             if show {
-                CourseView(namespace: namespace, show: $show, course: .constant(course))
+                CourseView(namespace: namespace, show: $show, course: $selectedCourse)
             }
             
         }
