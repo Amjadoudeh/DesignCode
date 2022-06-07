@@ -13,7 +13,7 @@ struct HomeView: View {
             Color("Background").ignoresSafeArea()
             ScrollView {
                 scrollDetection
-                /// Creating horizental Navigation
+                
                 featured
                 
                 Text("Courses".uppercased())

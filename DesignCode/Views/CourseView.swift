@@ -25,7 +25,7 @@ struct CourseView: View {
                         .background(.ultraThinMaterial, in: Circle())
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .padding(20)
+                .padding(32)
                 .ignoresSafeArea()
         }
     }
