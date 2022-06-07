@@ -56,7 +56,7 @@ struct HomeView: View {
                 if value < 0  {
                     hasScrolled = false
                 } else {
-                    hasScrolled = true 
+                    hasScrolled = true
                 }
             }
         })
