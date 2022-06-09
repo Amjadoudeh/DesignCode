@@ -16,7 +16,7 @@ struct SignupView: View {
                 VStack(alignment: .leading ,spacing: 16) {
                     Text("Sign up")
                         .font(Font.largeTitle.bold())
-                        .foregroundColor(.white)
+                        .blendMode(.overlay)
                     Text("Access to +120 hours of courses, tutorials and livestreams")
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.6))
@@ -60,13 +60,40 @@ struct SignupView: View {
                             .cornerRadius(16)
                             .opacity(0.8)
                     )
+                    Button(action: {
+                        print("Sign up")
+                    }, label: {
+                        Text("Sign up")
+                    })
                     
+                    Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
+                        .font(.footnote)
+                        .foregroundColor(Color.white.opacity(0.7))
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.white.opacity(0.1))
+                    
+                    VStack(alignment: .leading, spacing: 16) {
+                        Button(action: {
+                            print("Switch to Sign in")
+                        }, label: {
+                            HStack(spacing: 4) {
+                                Text("Alreay have an account? ")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.white.opacity(0.7))
+                                Text("Sign in")
+                                    .font(.footnote)
+                                    .bold()
+                                    .gradientForeground(colors: [Color.pink,Color.blue])
+                            }
+                        })
+                    }
                 }
                 .padding(20)
             }
             .background(.ultraThinMaterial)
             .cornerRadius(30)
-            .padding(.horizontal, 20)
+            .padding(.horizontal)
         }
     }
 }
@@ -74,5 +101,13 @@ struct SignupView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView()
+    }
+}
+
+extension View {
+    public func gradientForeground(colors: [Color]) -> some View {
+        self
+            .overlay(LinearGradient(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .mask(self)
     }
 }
