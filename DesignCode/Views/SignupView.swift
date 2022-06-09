@@ -2,7 +2,9 @@ import SwiftUI
 
 struct SignupView: View {
 
-    @State var email: String = " "
+    @State var email : String = " "
+    @State var password : String = " "
+    
     var body: some View {
         ZStack {
             Image("Background 2")
@@ -27,6 +29,37 @@ struct SignupView: View {
                             .autocapitalization(.none)
                             .textContentType(.emailAddress)
                     }
+                    .frame(height: 52)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.white, lineWidth: 1.0)
+                            .blendMode(.overlay)
+                    )
+                    .background(
+                        Color("Background")
+                            .cornerRadius(16)
+                            .opacity(0.8)
+                    )
+                    HStack(spacing: 12) {
+                        Image(systemName: "key.fill")
+                            .foregroundColor(Color.white)
+                        
+                        TextField("Password", text: $password)
+                            .foregroundColor(Color.white.opacity(0.6))
+                            .autocapitalization(.none)
+                            .textContentType(.password)
+                    }
+                    .frame(height: 52)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.white, lineWidth: 1.0)
+                            .blendMode(.overlay)
+                    )
+                    .background(
+                        Color("Background")
+                            .cornerRadius(16)
+                            .opacity(0.8)
+                    )
                     
                 }
                 .padding(20)
