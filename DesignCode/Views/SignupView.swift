@@ -24,7 +24,7 @@ struct SignupView: View {
                         Image(systemName: "envelope.open.fill")
                             .foregroundColor(Color.white)
                         
-                        TextField("Email", text: $email)
+                        TextField("Email address", text: $email)
                             .foregroundColor(Color.white.opacity(0.6))
                             .autocapitalization(.none)
                             .textContentType(.emailAddress)
@@ -63,7 +63,36 @@ struct SignupView: View {
                     Button(action: {
                         print("Sign up")
                     }, label: {
-                        Text("Sign up")
+                        GeometryReader() { geometry in
+                            ZStack {
+                                AngularGradient(gradient: Gradient(colors: [Color.purple, Color.red]), center: .center, angle: .degrees(0))
+                                    .blendMode(.overlay)
+                                    .blur(radius: 8.0)
+                                    .mask(
+                                        RoundedRectangle(cornerRadius: 16.0)
+                                            .frame(height: 50)
+                                            .frame(maxWidth: geometry.size.width - 16)
+                                            .blur(radius: 8.0)
+                                            
+                                )
+                                GradientText(title: "Sign up")
+                                    .font(.headline)
+                                    .frame(maxWidth: geometry.size.width - 16)
+                                    .frame(height: 50)
+                                    .background(
+                                        Color("Background")
+                                            .opacity(0.7)
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16.0)
+                                            .stroke(Color.white,lineWidth: 1.8)
+                                            .blendMode(.normal)
+                                            .opacity(0.7)
+                                    )
+                                    .cornerRadius(16.0)
+                            }
+                        }
+                        .frame(height: 50)
                     })
                     
                     Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
@@ -81,10 +110,10 @@ struct SignupView: View {
                                 Text("Alreay have an account? ")
                                     .font(.footnote)
                                     .foregroundColor(Color.white.opacity(0.7))
-                                Text("Sign in")
-                                    .font(.footnote)
-                                    .bold()
-                                    .gradientForeground(colors: [Color.pink,Color.blue])
+                                GradientText(title: "Sign up")
+                                    .font(Font.footnote.bold())
+                                    
+                                   
                             }
                         })
                     }
@@ -109,5 +138,14 @@ extension View {
         self
             .overlay(LinearGradient(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing))
             .mask(self)
+    }
+}
+
+struct GradientText: View {
+    var title: String = ""
+    
+    var body: some View {
+        Text(title)
+            .gradientForeground(colors: [Color.pink,Color.blue])
     }
 }
