@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct HomeView: View {
-
     @State var hasScrolled = false
     @State var show = false
+    @State var showStatusBar = true
     @State var selectedCourse: Course = courses[0]
 
     @Namespace var namespace
@@ -24,6 +24,7 @@ struct HomeView: View {
                         .onTapGesture {
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                                 show.toggle()
+                                showStatusBar = false
                             }
 
                         }
@@ -42,12 +43,22 @@ struct HomeView: View {
             }
 
         }
+        .statusBar(hidden: !showStatusBar)
+        .onChange(of: show) { newValue in
+            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                if newValue {
+                    showStatusBar = false
+                } else {
+                    showStatusBar = true
+                }
+            }
+        }
     }
 
     var scrollDetection: some View {
-/// to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
+        /// to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
         GeometryReader { proxy in
-           // Text("\(proxy.frame(in: .named("scroll")).minY)")
+            // Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0) /// adding a frame to get rid of the default hight of the Geometry
@@ -68,7 +79,7 @@ struct HomeView: View {
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
 
-                FeaturedItem(course: course)
+                    FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
@@ -95,7 +106,7 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
-        static var previews: some View {
-            HomeView()
-        }
+    static var previews: some View {
+        HomeView()
     }
+}
