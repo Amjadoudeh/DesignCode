@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
 /// using switch instead of using if 
@@ -14,7 +14,7 @@ struct ContentView: View {
                 case .notifications:
                     HomeView()
                 case .library:
-                    HomeView()
+                    SignupView()
                 }
             TabBar()
         }

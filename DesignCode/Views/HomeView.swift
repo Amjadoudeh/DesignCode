@@ -1,31 +1,31 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+
     @State var hasScrolled = false
     @State var show = false
     @State var selectedCourse: Course = courses[0]
-    
+
     @Namespace var namespace
-    
+
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
             ScrollView {
                 scrollDetection
-                
+
                 featured
-                
+
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
-                
+
                 if !show {
                     CourseItem(namespace: namespace, show: $show, course: courses[0])
                         .onTapGesture {
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                                 show.toggle()
                             }
-                            
+
                         }
                 }
             }
@@ -40,20 +40,20 @@ struct HomeView: View {
             if show {
                 CourseView(namespace: namespace, show: $show, course: $selectedCourse)
             }
-            
+
         }
     }
-    
+
     var scrollDetection: some View {
-///to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
-        GeometryReader{ proxy in
+/// to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
+        GeometryReader { proxy in
            // Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0) /// adding a frame to get rid of the default hight of the Geometry
         .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
             withAnimation(.easeInOut) {
-                if value < 0  {
+                if value < 0 {
                     hasScrolled = false
                 } else {
                     hasScrolled = true
@@ -61,19 +61,19 @@ struct HomeView: View {
             }
         })
     }
-    
+
     var featured: some View {
         TabView {
             ForEach(courses) { course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
-                    
+
                 FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                         .blur(radius: abs(minX / 50))
-                    //Text("\(proxy.frame(in: .global).minX)")
+                    // Text("\(proxy.frame(in: .global).minX)")
                         .overlay( // so now we 3 layers of background
                             Image(course.image)
                                 .resizable()

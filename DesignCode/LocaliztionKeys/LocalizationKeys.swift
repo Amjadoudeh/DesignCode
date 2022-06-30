@@ -6,7 +6,7 @@ struct LocalizationKeys {
         static let description: LocalizedStringKey = "FeaturedItem.description"
         static let duration: LocalizedStringKey = "FeaturedItem.duration"
     }
-    
+
     struct MainView {
         static let navtitle: LocalizedStringKey = "MainView.navTitle"
     }

@@ -22,4 +22,3 @@ enum Tab: String {
     case notifications
     case library
 }
-

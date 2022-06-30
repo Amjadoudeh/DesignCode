@@ -1,8 +1,8 @@
-//@testable import DesignCode
-//import XCTest
-//import SwiftUI
+// @testable import DesignCode
+// import XCTest
+// import SwiftUI
 //
-//class PreferenceKeysTests: XCTestCase {
+// class PreferenceKeysTests: XCTestCase {
 //    
 //    func test_ScrollPreferenceKey() {
 //        let initValue: CGFloat = 0
@@ -12,4 +12,4 @@
 //        Color.clear.preference(key: ScrollPreferenceKey.self , value: nextValue)
 //        XCTAssert(<#Bool#>)
 //    }
-//}
+// }

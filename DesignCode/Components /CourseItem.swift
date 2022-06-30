@@ -4,12 +4,12 @@ struct CourseItem: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
     var course: Course
-    
+
     var body: some View {
         VStack {
-            
+
             Spacer()
-            
+
             VStack(alignment: .leading, spacing: 12) {
                 Text(course.title)
                     .font(.largeTitle.weight(.bold))
@@ -55,7 +55,7 @@ struct CourseItem: View {
 
 struct CourseItem_Previews: PreviewProvider {
     @Namespace static var namespace
-    
+
     static var previews: some View {
         CourseItem(namespace: namespace, show: .constant(true), course: courses[0])
     }

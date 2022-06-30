@@ -4,7 +4,7 @@ struct NavigationBar: View {
 
     let title: LocalizedStringKey
     @Binding var hasScrolled: Bool
-    
+
     var body: some View {
         ZStack {
 /// adding the blur modifire just to break the edges of the container which made by background modifire using the ulteaThinMaterial ( change the color to red to try it)
@@ -18,7 +18,7 @@ struct NavigationBar: View {
                 .padding(.leading, 20)
                 .padding(.top, 20)
                 .offset(y: hasScrolled ? 0 : -4)
-            
+
             HStack(spacing: 16) {
                 Image(systemName: "magnifyingglass")
                     .font(.body.weight(.bold))
@@ -26,7 +26,7 @@ struct NavigationBar: View {
                     .frame(width: 36, height: 36)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .strokeStyle(cornerRadius: 14)
-                
+
                 Image("Avatar Default")
 /// changing the order of the modifiers could change the design totally
                     .resizable()
@@ -45,7 +45,7 @@ struct NavigationBar: View {
 // to be able to push it to the top we have to use another frame
             .frame(maxHeight: .infinity, alignment: .top)
     }
-    
+
 }
 
 struct NavigationBar_Previews: PreviewProvider {

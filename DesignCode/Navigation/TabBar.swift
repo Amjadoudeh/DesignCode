@@ -4,15 +4,15 @@ struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
     @State var hoverColor: Color = .purple
     @State var tabItemWidth: CGFloat = 0
-    
+
     var body: some View {
         HStack {
             buttons
         }
         .padding(.horizontal, 8)
         .padding(.top, 14)
-        .frame(height: 88 , alignment: .top)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34 ,style: .continuous))
+        .frame(height: 88, alignment: .top)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34, style: .continuous))
         /// using the background to creat a circle and make the hover effect by moving it
         .background(
             background
@@ -22,10 +22,10 @@ struct TabBar: View {
             overlay
         )
         .strokeStyle(cornerRadius: 34)
-        .frame(maxHeight: .infinity , alignment: .bottom)
+        .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
     }
-    
+
     var buttons: some View {
         ForEach(tabItems) { item in
             Button {
@@ -33,13 +33,13 @@ struct TabBar: View {
                     selectedTab = item.tab
                     hoverColor = item.color
                 }
-                
+
             } label: {
                 VStack(spacing: 0) {
                     Image(systemName: item.icon)
                         .symbolVariant(.fill)
                         .font(.body.bold())
-                        .frame(width: 44 , height: 30)
+                        .frame(width: 44, height: 30)
                     Text(item.text)
                         .font(.caption2)
                         .lineLimit(1)
@@ -52,9 +52,9 @@ struct TabBar: View {
 /// using the GeometryReader & PreferenceKey  to position the overlay on landspace view
             .overlay(
                 // need to be checked again
-                GeometryReader{ proxy in
+                GeometryReader { proxy in
                     // Text("\(proxy.size.width)")
-                    Color.clear.preference(key: TabPreferenceKey.self , value: proxy.size.width)
+                    Color.clear.preference(key: TabPreferenceKey.self, value: proxy.size.width)
                     // tabItemWidth = proxy.size.width - no working because it needs to conform to a View
                 }
             )
@@ -64,7 +64,7 @@ struct TabBar: View {
             }
         }
     }
-    
+
     var background: some View {
         HStack {
             if selectedTab == .library { Spacer() }
@@ -83,7 +83,7 @@ struct TabBar: View {
         }
         .padding(.horizontal, 8)
     }
-    
+
     var overlay: some View {
         HStack {
             if selectedTab == .library { Spacer() }
@@ -108,7 +108,6 @@ struct TabBar: View {
         .padding(.horizontal, 8)
     }
 }
-
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {

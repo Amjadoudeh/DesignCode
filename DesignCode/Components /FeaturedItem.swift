@@ -3,7 +3,7 @@ import SwiftUI
 struct FeaturedItem: View {
     private typealias Localization = LocalizationKeys.FeaturedItem
     var course: Course = courses[0]
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
@@ -19,7 +19,7 @@ struct FeaturedItem: View {
             Text(course.title)
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundStyle(.linearGradient(colors: [.primary,.primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
             // Text(Localization.duration)
             Text(course.subtitle)
                 .font(.footnote)
@@ -37,11 +37,10 @@ struct FeaturedItem: View {
         .padding(.vertical, 20)
         .frame(width: nil, height: 350.0)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous)) // Material is to have a glassy view
-        .strokeStyle()//after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
-        .padding(.horizontal,20)
+        .strokeStyle()// after creating the extension I can repleace it with my custom modifier .modifier(StrokeStyle())
+        .padding(.horizontal, 20)
     }
 }
-
 
 struct FeaturedItem_Previews: PreviewProvider {
     static var previews: some View {

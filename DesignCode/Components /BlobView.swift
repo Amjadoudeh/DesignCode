@@ -2,9 +2,9 @@ import SwiftUI
 
 struct BlobView: View {
     @State var appear = false
-    
+
     var body: some View {
-        
+
 /// Creating the same shap using Canvas
         /// using the timelineView to animate the blob
         TimelineView(.animation) { timeline in
@@ -14,15 +14,15 @@ struct BlobView: View {
             let angle2 = Angle.degrees(now.remainder(dividingBy: 6) * 10)
             let x2 = cos(angle2.radians)
             Text(" \(x)")
-            
+
             Canvas { context, size in
-                context.fill(path(in: CGRect(x: 0, y: 0,width: size.width , height: size.height ), x: x , x2 : x2), with: .linearGradient(Gradient(colors: [.pink, .blue]), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 300, y: 310)))
+                context.fill(path(in: CGRect(x: 0, y: 0, width: size.width, height: size.height ), x: x, x2: x2), with: .linearGradient(Gradient(colors: [.pink, .blue]), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 300, y: 310)))
             }
-            .frame(width:300, height: 310)
+            .frame(width: 300, height: 310)
             .rotationEffect(.degrees(appear ? 360 : 0 ))
         }
         .onAppear {
-            withAnimation(.linear(duration: 30).repeatForever(autoreverses: true)){
+            withAnimation(.linear(duration: 30).repeatForever(autoreverses: true)) {
                 appear = true
             }
         }
@@ -47,7 +47,7 @@ struct BlobView: View {
     }
 }
 
-//struct BlobShape: Shape {
+// struct BlobShape: Shape {
 //    func path(in rect: CGRect) -> Path {
 //        var path = Path()
 //        let width = rect.size.width
@@ -60,7 +60,7 @@ struct BlobView: View {
 //        path.closeSubpath()
 //        return path
 //    }
-//}
+// }
 
 struct BlobView_Previews: PreviewProvider {
     static var previews: some View {

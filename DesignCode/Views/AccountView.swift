@@ -4,7 +4,7 @@ struct AccountView: View {
 /// sitting a state for deleting
     @State var isDeleted = false
     @State var isPinned = false
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -16,7 +16,7 @@ struct AccountView: View {
             .navigationTitle("Account")
         }
     }
-    
+
     var profile: some View {
         VStack(spacing: 8) {
             Image(systemName:
@@ -49,33 +49,32 @@ struct AccountView: View {
         .frame(maxWidth: .infinity)
         .padding()
     }
-    
+
     var menu: some View {
         Section {
             NavigationLink(destination: HomeView()) {
-                Label("Settings",systemImage: "gear")
+                Label("Settings", systemImage: "gear")
             }
             // just using different way to navigate!
             NavigationLink {
                 Text("Billing") }
         label: {
-            Label("Billing",systemImage: "creditcard")
+            Label("Billing", systemImage: "creditcard")
         }
-            NavigationLink { Text("Help") } label:
-            {
-                Label("Help",systemImage: "questionmark")
+            NavigationLink { Text("Help") } label: {
+                Label("Help", systemImage: "questionmark")
             }
         }
         .accentColor(.primary)
-        .listRowSeparatorTint(.blue) ///Changing the color of the separator
+        .listRowSeparatorTint(.blue) /// Changing the color of the separator
         .listRowSeparator(.hidden)
     }
-    
+
     var links: some View {
         Section {
-            
+
             if !isDeleted {
-                Link(destination: URL(string:"https://amjadoudeh.com")!) {
+                Link(destination: URL(string: "https://amjadoudeh.com")!) {
                     HStack {
                         Label("Website", systemImage: "house")
                         Spacer()
@@ -90,7 +89,7 @@ struct AccountView: View {
                     pinButton
                 }
             }
-            Link(destination: URL(string:"https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
+            Link(destination: URL(string: "https://www.youtube.com/watch?v=QHk8N1Xaj8I")!) {
                 HStack {
                     Label("Youtube", systemImage: "tv")
                     Spacer()
@@ -104,7 +103,7 @@ struct AccountView: View {
         .accentColor(.primary)
         .listRowSeparator(.hidden)
     }
-    
+
     var pinButton: some View {
         Button(action: { isPinned.toggle() }) {
             if isPinned {

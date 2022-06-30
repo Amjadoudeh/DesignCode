@@ -12,7 +12,7 @@ struct CourseView: View {
             }
             .background(Color("Background"))
             .ignoresSafeArea()
-            
+
             Button {
                 withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                     show.toggle()
@@ -31,7 +31,7 @@ struct CourseView: View {
     }
 
     var cover: some View {
-        
+
         VStack {
             Spacer()
         }
@@ -55,7 +55,7 @@ struct CourseView: View {
                 .matchedGeometryEffect(id: "mask", in: namespace)
         )
         .overlay(
-            VStack (alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 12) {
                 Text(course.title)
                     .font(.largeTitle.weight(.bold))
                     .matchedGeometryEffect(id: "title", in: namespace)
@@ -66,7 +66,7 @@ struct CourseView: View {
                 Text(course.description)
                     .font(.footnote)
                     .matchedGeometryEffect(id: "text", in: namespace)
-                
+
                 Divider()
                 HStack {
                     Image("Avatar Default")
@@ -95,7 +95,7 @@ struct CourseView: View {
 
 struct CourseView_Previews: PreviewProvider {
     @Namespace static var namespace
-    
+
     static var previews: some View {
         CourseView(namespace: namespace, show: .constant(true), course: .constant(courses[0]))
     }
