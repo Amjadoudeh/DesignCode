@@ -40,6 +40,12 @@ struct HomeView: View {
             )
             if show {
                 CourseView(namespace: namespace, show: $show, course: $selectedCourse)
+                    .zIndex(1)
+                    .transition(.asymmetric(
+                        insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                        removal: .opacity.animation(.easeInOut(duration: 0.1))
+                        )
+                    )
             }
 
         }

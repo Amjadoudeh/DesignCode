@@ -3,6 +3,7 @@ import SwiftUI
 struct CourseView: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
+    @State var appear = [false, false, false]
     @Binding var course: Course
 
     var body: some View {
@@ -14,6 +15,22 @@ struct CourseView: View {
             .ignoresSafeArea()
 
             button
+        }
+        .onAppear {
+            withAnimation(.easeOut.delay(0.3)) {
+                appear[0] = true
+            }
+            withAnimation(.easeOut.delay(0.4)) {
+                appear[1] = true
+            }
+            withAnimation(.easeOut.delay(0.5)) {
+                appear[2] = true
+            }
+        }
+        .onChange(of: show) { _ in
+            appear[0] = false
+            appear[1] = false
+            appear[2] = false
         }
     }
 
@@ -55,6 +72,7 @@ struct CourseView: View {
                     .matchedGeometryEffect(id: "text", in: namespace)
 
                 Divider()
+                    .opacity(appear[0] ? 1 : 0)
                 HStack {
                     Image("Avatar Default")
                     /// changing the order of the modifiers could change the design totally
@@ -66,6 +84,7 @@ struct CourseView: View {
                         .strokeStyle(cornerRadius: 18)
                     Text("Taught by Amjad Oudeh")
                 }
+                .opacity(appear[1] ? 1 : 0)
             }
                 .padding(20)
                 .background(
