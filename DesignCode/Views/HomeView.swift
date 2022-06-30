@@ -22,7 +22,7 @@ struct HomeView: View {
                 if !show {
                     CourseItem(namespace: namespace, show: $show, course: courses[0])
                         .onTapGesture {
-                            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                            withAnimation(.openCard) {
                                 show.toggle()
                                 showStatusBar = false
                             }
@@ -45,7 +45,7 @@ struct HomeView: View {
         }
         .statusBar(hidden: !showStatusBar)
         .onChange(of: show) { newValue in
-            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+            withAnimation(.closeCard) {
                 if newValue {
                     showStatusBar = false
                 } else {
