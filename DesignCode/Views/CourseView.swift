@@ -80,7 +80,7 @@ struct CourseView: View {
                 Text(course.subtitle.uppercased())
                     .font(.footnote.weight(.semibold))
                     .matchedGeometryEffect(id: "subtitle", in: namespace)
-                Text(course.description)
+                Text(course.text)
                     .font(.footnote)
                     .matchedGeometryEffect(id: "text", in: namespace)
 

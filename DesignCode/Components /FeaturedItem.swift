@@ -26,7 +26,7 @@ struct FeaturedItem: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
             // Text(Localization.description)
-            Text(course.description)
+            Text(course.text)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
