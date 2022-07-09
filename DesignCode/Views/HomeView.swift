@@ -6,39 +6,29 @@ struct HomeView: View {
     @State var showStatusBar = true
     @State var selectedId = UUID()
     @State var selectedCourse: Course = courses[0]
-    
+
     @Namespace var namespace
-    
+
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
             ScrollView {
                 scrollDetection
-                
+
                 featured
-                
+
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
-                
+
                 if !show {
-                    ForEach(courses) { course in
-                        CourseItem(namespace: namespace, course: course, show: $show)
-                            .onTapGesture {
-                                withAnimation(.openCard) {
-                                    show.toggle()
-                                    showStatusBar = false
-                                    selectedId = course.id
-                                }
-                                
-                            }
-                    }
+                    cards
                 } else {
-                    ForEach(courses) { course in
+                    ForEach(courses) { _ in
                         Rectangle()
                             .fill(.white)
                             .frame(height: 300)
                             .cornerRadius(30)
-                            .shadow(color: Color("shadow"), radius: 20, x: 0, y: 10)
+                            .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 10)
                             .opacity(0.3)
                         .padding(.horizontal, 20)
                     }
@@ -53,19 +43,9 @@ struct HomeView: View {
                 NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
             )
             if show {
-                ForEach(courses) { course in
-                    if course.id == selectedId {
-                        CourseView(namespace: namespace, show: $show, course: course)
-                            .zIndex(1)
-                            .transition(.asymmetric(
-                                insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                                removal: .opacity.animation(.easeInOut(duration: 0.1))
-                            )
-                            )
-                    }
-                }
+                detail
             }
-            
+
         }
         .statusBar(hidden: !showStatusBar)
         .onChange(of: show) { newValue in
@@ -78,7 +58,7 @@ struct HomeView: View {
             }
         }
     }
-    
+
     var scrollDetection: some View {
         /// to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
         GeometryReader { proxy in
@@ -96,13 +76,13 @@ struct HomeView: View {
             }
         })
     }
-    
+
     var featured: some View {
         TabView {
             ForEach(featuredCourses) { course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
-                    
+
                     FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
@@ -126,6 +106,33 @@ struct HomeView: View {
         .background(
             Image("Blob 1")
                 .offset(x: 250, y: -100)) // transform the image
+    }
+
+    var cards: some View {
+        ForEach(courses) { course in
+            CourseItem(namespace: namespace, course: course, show: $show)
+                .onTapGesture {
+                    withAnimation(.openCard) {
+                        show.toggle()
+                        showStatusBar = false
+                        selectedId = course.id
+                    }
+
+                }
+        }
+    }
+    var detail: some View {
+        ForEach(courses) { course in
+            if course.id == selectedId {
+                CourseView(namespace: namespace, show: $show, course: course)
+                    .zIndex(1)
+                    .transition(.asymmetric(
+                        insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                        removal: .opacity.animation(.easeInOut(duration: 0.1))
+                    )
+                    )
+            }
+        }
     }
 }
 
