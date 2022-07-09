@@ -22,21 +22,29 @@ struct CourseView: View {
             button
         }
         .onAppear {
-            withAnimation(.easeOut.delay(0.3)) {
-                appear[0] = true
-            }
-            withAnimation(.easeOut.delay(0.4)) {
-                appear[1] = true
-            }
-            withAnimation(.easeOut.delay(0.5)) {
-                appear[2] = true
-            }
+            fadeIn()
         }
         .onChange(of: show) { _ in
-            appear[0] = false
-            appear[1] = false
-            appear[2] = false
+            fadeOut()
         }
+    }
+
+    func fadeIn() {
+        withAnimation(.easeOut.delay(0.3)) {
+            appear[0] = true
+        }
+        withAnimation(.easeOut.delay(0.4)) {
+            appear[1] = true
+        }
+        withAnimation(.easeOut.delay(0.5)) {
+            appear[2] = true
+        }
+    }
+
+    func fadeOut() {
+        appear[0] = false
+        appear[1] = false
+        appear[2] = false
     }
 
     var cover: some View {
@@ -122,17 +130,17 @@ struct CourseView: View {
         Button {
             withAnimation(.closeCard) {
                 show.toggle()
-                }
-            } label: {
+            }
+        } label: {
             Image(systemName: "xmark")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(.secondary)
-                    .padding(8)
-                    .background(.ultraThinMaterial, in: Circle())
+                .font(.body.weight(.bold))
+                .foregroundColor(.secondary)
+                .padding(8)
+                .background(.ultraThinMaterial, in: Circle())
         }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(32)
-            .ignoresSafeArea()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+        .padding(32)
+        .ignoresSafeArea()
     }
 }
 
