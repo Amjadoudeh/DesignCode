@@ -32,6 +32,16 @@ struct HomeView: View {
                                 
                             }
                     }
+                } else {
+                    ForEach(courses) { course in
+                        Rectangle()
+                            .fill(.white)
+                            .frame(height: 300)
+                            .cornerRadius(30)
+                            .shadow(color: Color("shadow"), radius: 20, x: 0, y: 10)
+                            .opacity(0.3)
+                        .padding(.horizontal, 20)
+                    }
                 }
             }
             .coordinateSpace(name: "scroll")
