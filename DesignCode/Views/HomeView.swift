@@ -4,21 +4,22 @@ struct HomeView: View {
     @State var hasScrolled = false
     @State var show = false
     @State var showStatusBar = true
+    @State var selectedId = UUID()
     @State var selectedCourse: Course = courses[0]
-
+    
     @Namespace var namespace
-
+    
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
             ScrollView {
                 scrollDetection
-
+                
                 featured
-
+                
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
-
+                
                 if !show {
                     ForEach(courses) { course in
                         CourseItem(namespace: namespace, course: course, show: $show)
@@ -26,9 +27,10 @@ struct HomeView: View {
                                 withAnimation(.openCard) {
                                     show.toggle()
                                     showStatusBar = false
+                                    selectedId = course.id
                                 }
-
-                        }
+                                
+                            }
                     }
                 }
             }
@@ -42,16 +44,18 @@ struct HomeView: View {
             )
             if show {
                 ForEach(courses) { course in
-                    CourseView(namespace: namespace, show: $show, course: course)
-                        .zIndex(1)
-                        .transition(.asymmetric(
-                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                            removal: .opacity.animation(.easeInOut(duration: 0.1))
+                    if course.id == selectedId {
+                        CourseView(namespace: namespace, show: $show, course: course)
+                            .zIndex(1)
+                            .transition(.asymmetric(
+                                insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                                removal: .opacity.animation(.easeInOut(duration: 0.1))
                             )
-                    )
+                            )
+                    }
                 }
             }
-
+            
         }
         .statusBar(hidden: !showStatusBar)
         .onChange(of: show) { newValue in
@@ -64,7 +68,7 @@ struct HomeView: View {
             }
         }
     }
-
+    
     var scrollDetection: some View {
         /// to target the position of the scrollView(starting form after the navBar) I had to use named( ) with coordinateSpace(name: "scroll"), since global targets the full screen and local targets a fram moves with it
         GeometryReader { proxy in
@@ -82,13 +86,13 @@ struct HomeView: View {
             }
         })
     }
-
+    
     var featured: some View {
         TabView {
             ForEach(featuredCourses) { course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
-
+                    
                     FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
