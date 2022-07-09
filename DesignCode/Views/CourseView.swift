@@ -11,6 +11,10 @@ struct CourseView: View {
             ScrollView {
                 cover
                 content
+                    .offset(y: 120)
+                    .padding(.bottom, 200)
+                    .opacity(appear[2] ? 1 : 0)
+
             }
             .background(Color("Background"))
             .ignoresSafeArea()
