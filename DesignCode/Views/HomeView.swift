@@ -41,13 +41,15 @@ struct HomeView: View {
                 NavigationBar(title: LocalizationKeys.MainView.navtitle, hasScrolled: $hasScrolled)
             )
             if show {
-                CourseView(namespace: namespace, show: $show, course: $selectedCourse)
-                    .zIndex(1)
-                    .transition(.asymmetric(
-                        insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                        removal: .opacity.animation(.easeInOut(duration: 0.1))
-                        )
+                ForEach(courses) { course in
+                    CourseView(namespace: namespace, show: $show, course: course)
+                        .zIndex(1)
+                        .transition(.asymmetric(
+                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                            removal: .opacity.animation(.easeInOut(duration: 0.1))
+                            )
                     )
+                }
             }
 
         }
