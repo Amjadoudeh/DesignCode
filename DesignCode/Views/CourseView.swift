@@ -50,31 +50,43 @@ struct CourseView: View {
 
     var cover: some View {
 
-        VStack {
-            Spacer()
+        GeometryReader { proxy in
+            let secrollY = proxy.frame(in: .global).minY
+
+            VStack {
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: secrollY > 0 ? 500 + secrollY : 500)
+            .foregroundStyle(.black)
+            .background(
+                Image(course.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .matchedGeometryEffect(id: "image\(course.id)", in: namespace)
+                    .offset(y: secrollY > 0 ? secrollY * -0.8 : 0)
+
+            )
+            .background(
+                Image(course.background)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .matchedGeometryEffect(id: "background\(course.id)", in: namespace)
+                    .offset(y: secrollY > 0 ? -secrollY : 0)
+                    .scaleEffect(secrollY > 0 ? secrollY / 1000 + 1 : 1)
+                    .blur(radius: secrollY > 0 ? secrollY / 30 : 0)
+            )
+            .mask(
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .matchedGeometryEffect(id: "mask\(course.id)", in: namespace)
+                    .offset(y: secrollY > 0 ? -secrollY : 0)
+            )
+            .overlay(
+                overlayContent
+                    .offset(y: secrollY > 0 ? secrollY * -0.6 : 0)
+        )
         }
-        .frame(maxWidth: .infinity)
         .frame(height: 500)
-        .foregroundStyle(.black)
-        .background(
-            Image(course.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .matchedGeometryEffect(id: "image\(course.id)", in: namespace)
-        )
-        .background(
-            Image(course.background)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .matchedGeometryEffect(id: "background\(course.id)", in: namespace)
-        )
-        .mask(
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .matchedGeometryEffect(id: "mask\(course.id)", in: namespace)
-        )
-        .overlay(
-            overlayContent
-        )
     }
 
     var content: some View {
