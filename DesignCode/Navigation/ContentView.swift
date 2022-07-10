@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @EnvironmentObject var model: Model
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -17,6 +18,7 @@ struct ContentView: View {
                     SignupView()
                 }
             TabBar()
+                .offset(y: model.showDetail ? 200 : 0)
         }
         /// customise a safe area for the TabBar
         .safeAreaInset(edge: .bottom, content: {
@@ -31,5 +33,6 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
         ContentView()
             .preferredColorScheme(.dark)
+            .environmentObject(Model())
     }
 }
