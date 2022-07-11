@@ -32,6 +32,12 @@ struct CourseView: View {
                         }
                     }
                     .onEnded { _ in
+                        if viewState.width > 80 {
+                            withAnimation(.closeCard.delay(0.4)) {
+                                show.toggle()
+                                model.showDetail.toggle()
+                            }
+                        }
                         withAnimation {
                             viewState = .zero
                         }
