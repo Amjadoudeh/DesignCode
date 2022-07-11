@@ -6,6 +6,7 @@ struct CourseView: View {
     @State var appear = [false, false, false]
     var course: Course = courses[0]
     @EnvironmentObject var model: Model
+    @State var viewState: CGSize = .zero
 
     var body: some View {
         ZStack {
@@ -18,6 +19,23 @@ struct CourseView: View {
 
             }
             .background(Color("Background"))
+            .mask(RoundedRectangle(cornerRadius: (viewState.width / 3), style: .continuous))
+            .scaleEffect(viewState.width / -500 + 1)
+            .background(.black.opacity(viewState.width / 500))
+            .background(.ultraThinMaterial)
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        guard value.translation.width > 0 else { return }
+                        viewState = value.translation
+                    }
+                    .onEnded { _ in
+                        withAnimation {
+                            viewState = .zero
+                        }
+
+                    }
+            )
             .ignoresSafeArea()
 
             button
