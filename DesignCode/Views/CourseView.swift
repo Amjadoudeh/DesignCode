@@ -27,7 +27,9 @@ struct CourseView: View {
                 DragGesture()
                     .onChanged { value in
                         guard value.translation.width > 0 else { return }
+                        if value.startLocation.x < 100 {
                         viewState = value.translation
+                        }
                     }
                     .onEnded { _ in
                         withAnimation {
