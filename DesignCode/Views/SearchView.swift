@@ -19,7 +19,7 @@ struct SearchView: View {
             .navigationBarItems(trailing: Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                Text("Done")
+                Text("Done").bold()
             })
         }
     }
