@@ -35,6 +35,7 @@
 		70FCF3302825468700979152 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70FCF3322825468700979152 /* Localizable.strings */; };
 		70FCF3362825585900979152 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCF3352825585900979152 /* LocalizationKeys.swift */; };
 		D00FB77A286DC8AD00E6589E /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FB779286DC8AD00E6589E /* Animation.swift */; };
+		D0AA86AC2885D722004AF1C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA86AB2885D722004AF1C1 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		70FCF3342825468A00979152 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70FCF3352825585900979152 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		D00FB779286DC8AD00E6589E /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		D0AA86AB2885D722004AF1C1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				701C56992815EE7900C7BEE1 /* HomeView.swift */,
 				70230438283CF52900C56EF4 /* CourseView.swift */,
 				708A7EE02850FCA8001EB72F /* SignupView.swift */,
+				D0AA86AB2885D722004AF1C1 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				707D4FF52817395500C0F636 /* NavigationBar.swift in Sources */,
 				70800234280ED19400ED9379 /* BlobView.swift in Sources */,
 				70BFA44F2800EFF1002FD946 /* ContentView.swift in Sources */,
+				D0AA86AC2885D722004AF1C1 /* SearchView.swift in Sources */,
 				70BFA44D2800EFF1002FD946 /* DesignCodeApp.swift in Sources */,
 				70230437283CCD1000C56EF4 /* CourseItem.swift in Sources */,
 				70230439283CF52900C56EF4 /* CourseView.swift in Sources */,
