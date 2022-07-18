@@ -22,7 +22,7 @@ struct HomeView: View {
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
 
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300))]) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 20)], spacing: 20) {
                 if !show {
                     cards
                 } else {
@@ -37,6 +37,7 @@ struct HomeView: View {
                     }
                 }
                 }
+                .padding(20)
             }
             .coordinateSpace(name: "scroll")
             /// customising a safe area on the top to make a better display for the content
