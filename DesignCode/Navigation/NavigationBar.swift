@@ -5,6 +5,7 @@ struct NavigationBar: View {
     let title: LocalizedStringKey
     @Binding var hasScrolled: Bool
     @State var showSearch: Bool = false
+    @State var showAccount: Bool = false
 
     var body: some View {
         ZStack {
@@ -36,6 +37,10 @@ struct NavigationBar: View {
                     SearchView()
                 }
 
+                Button {
+                    showAccount = true
+                    
+                } label: {
                 Image("Avatar Default")
 /// changing the order of the modifiers could change the design totally
                     .resizable()
@@ -44,6 +49,10 @@ struct NavigationBar: View {
                     .padding(8)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
                     .strokeStyle(cornerRadius: 18)
+                }
+                .sheet(isPresented: $showAccount) {
+                    AccountView()
+                }
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
             .padding(.trailing, 20)
@@ -56,6 +65,7 @@ struct NavigationBar: View {
     }
 
 }
+
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
