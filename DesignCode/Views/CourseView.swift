@@ -24,9 +24,7 @@ struct CourseView: View {
             .scaleEffect(viewState.width / -500 + 1)
             .background(.black.opacity(viewState.width / 500))
             .background(.ultraThinMaterial)
-            .gesture(
-                drag
-            )
+            .gesture(isDraggable ? drag : nil)
             .ignoresSafeArea()
 
             button
@@ -56,32 +54,32 @@ struct CourseView: View {
         appear[1] = false
         appear[2] = false
     }
-    
-    var drag: some Gesture {
-            DragGesture(minimumDistance: 20, coordinateSpace: .local)
-                .onChanged { value in
-                    guard value.translation.width > 0 else { return }
-                    if value.startLocation.x < 100 {
-                        withAnimation(.closeCard) {
-                            viewState = value.translation
-                        }
-                    }
-                    
-                    if viewState.width > 120 {
-                        close()
-                    }
-                }
-                .onEnded { _ in
-                    if viewState.width > 80 {
-                        close()
-                    } else {
-                        withAnimation(.closeCard) {
-                            viewState = .zero
-                        }
-                    }
 
+    var drag: some Gesture {
+        DragGesture(minimumDistance: 20, coordinateSpace: .local)
+            .onChanged { value in
+                guard value.translation.width > 0 else { return }
+                if value.startLocation.x < 100 {
+                    withAnimation(.closeCard) {
+                        viewState = value.translation
+                    }
                 }
-        
+
+                if viewState.width > 120 {
+                    close()
+                }
+            }
+            .onEnded { _ in
+                if viewState.width > 80 {
+                    close()
+                } else {
+                    withAnimation(.closeCard) {
+                        viewState = .zero
+                    }
+                }
+
+            }
+
     }
 
     var cover: some View {
@@ -120,7 +118,7 @@ struct CourseView: View {
             .overlay(
                 overlayContent
                     .offset(y: secrollY > 0 ? secrollY * -0.6 : 0)
-        )
+            )
         }
         .frame(height: 500)
     }
@@ -159,42 +157,42 @@ struct CourseView: View {
     }
 
     var overlayContent: some View {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(course.title)
-                    .font(.largeTitle.weight(.bold))
-                    .matchedGeometryEffect(id: "title\(course.id)", in: namespace)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text(course.subtitle.uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .matchedGeometryEffect(id: "subtitle\(course.id)", in: namespace)
-                Text(course.text)
-                    .font(.footnote)
-                    .matchedGeometryEffect(id: "text\(course.id)", in: namespace)
+        VStack(alignment: .leading, spacing: 12) {
+            Text(course.title)
+                .font(.largeTitle.weight(.bold))
+                .matchedGeometryEffect(id: "title\(course.id)", in: namespace)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text(course.subtitle.uppercased())
+                .font(.footnote.weight(.semibold))
+                .matchedGeometryEffect(id: "subtitle\(course.id)", in: namespace)
+            Text(course.text)
+                .font(.footnote)
+                .matchedGeometryEffect(id: "text\(course.id)", in: namespace)
 
-                Divider()
-                    .opacity(appear[0] ? 1 : 0)
-                HStack {
-                    Image("Avatar Default")
-                    /// changing the order of the modifiers could change the design totally
-                        .resizable()
-                        .frame(width: 26, height: 26)
-                        .cornerRadius(10)
-                        .padding(8)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .strokeStyle(cornerRadius: 18)
-                    Text("Taught by Amjad Oudeh")
-                }
-                .opacity(appear[1] ? 1 : 0)
+            Divider()
+                .opacity(appear[0] ? 1 : 0)
+            HStack {
+                Image("Avatar Default")
+                /// changing the order of the modifiers could change the design totally
+                    .resizable()
+                    .frame(width: 26, height: 26)
+                    .cornerRadius(10)
+                    .padding(8)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .strokeStyle(cornerRadius: 18)
+                Text("Taught by Amjad Oudeh")
             }
-                .padding(20)
-                .background(
-                    Rectangle()
-                        .fill(.ultraThinMaterial)
-                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                        .matchedGeometryEffect(id: "blur\(course.id)", in: namespace)
-                )
-                .offset(y: 250)
-                .padding(20)
+            .opacity(appear[1] ? 1 : 0)
+        }
+        .padding(20)
+        .background(
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .matchedGeometryEffect(id: "blur\(course.id)", in: namespace)
+        )
+        .offset(y: 250)
+        .padding(20)
     }
     func close() {
         withAnimation(.closeCard.delay(0.4)) {
