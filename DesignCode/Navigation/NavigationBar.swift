@@ -4,6 +4,7 @@ struct NavigationBar: View {
 
     let title: LocalizedStringKey
     @Binding var hasScrolled: Bool
+    @State var showSearch: Bool = false
 
     var body: some View {
         ZStack {
@@ -20,12 +21,20 @@ struct NavigationBar: View {
                 .offset(y: hasScrolled ? 0 : -4)
 
             HStack(spacing: 16) {
-                Image(systemName: "magnifyingglass")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(.secondary)
-                    .frame(width: 36, height: 36)
-                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .strokeStyle(cornerRadius: 14)
+                Button {
+                    showSearch = true
+                    
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .font(.body.weight(.bold))
+                        .foregroundColor(.secondary)
+                        .frame(width: 36, height: 36)
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .strokeStyle(cornerRadius: 14)
+                }
+                .sheet(isPresented: $showSearch) {
+                    SearchView()
+                }
 
                 Image("Avatar Default")
 /// changing the order of the modifiers could change the design totally
