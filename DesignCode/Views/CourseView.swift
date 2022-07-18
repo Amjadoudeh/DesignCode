@@ -24,22 +24,26 @@ struct CourseView: View {
             .background(.black.opacity(viewState.width / 500))
             .background(.ultraThinMaterial)
             .gesture(
-                DragGesture()
+                DragGesture(minimumDistance: 20, coordinateSpace: .local)
                     .onChanged { value in
                         guard value.translation.width > 0 else { return }
                         if value.startLocation.x < 100 {
-                        viewState = value.translation
+                            withAnimation(.closeCard) {
+                                viewState = value.translation
+                            }
+                        }
+                        
+                        if viewState.width > 120 {
+                            close()
                         }
                     }
                     .onEnded { _ in
                         if viewState.width > 80 {
-                            withAnimation(.closeCard.delay(0.4)) {
-                                show.toggle()
-                                model.showDetail.toggle()
+                            close()
+                        } else {
+                            withAnimation(.closeCard) {
+                                viewState = .zero
                             }
-                        }
-                        withAnimation {
-                            viewState = .zero
                         }
 
                     }
@@ -185,6 +189,15 @@ struct CourseView: View {
                 )
                 .offset(y: 250)
                 .padding(20)
+    }
+    func close() {
+        withAnimation(.closeCard.delay(0.4)) {
+            show.toggle()
+            model.showDetail.toggle()
+        }
+        withAnimation {
+            viewState = .zero
+        }
     }
 }
 
