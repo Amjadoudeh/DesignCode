@@ -8,8 +8,9 @@ struct SearchView: View {
             List(0 ..< 5) { item in
                 Text("Hello Amjad")
             }
-            .searchable(text: $text)
+            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("SwiftUI, React, UI Design, Figma"))
             .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
