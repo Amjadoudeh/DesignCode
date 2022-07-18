@@ -22,6 +22,7 @@ struct HomeView: View {
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
 
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300))]) {
                 if !show {
                     cards
                 } else {
@@ -34,6 +35,7 @@ struct HomeView: View {
                             .opacity(0.3)
                         .padding(.horizontal, 20)
                     }
+                }
                 }
             }
             .coordinateSpace(name: "scroll")
