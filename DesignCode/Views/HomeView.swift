@@ -98,6 +98,8 @@ struct HomeView: View {
                             Image(course.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .padding(20)
+                                .frame(maxWidth: 500)
                                 .frame(height: 230)
                                 .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                                 .offset(x: 35, y: -80)
