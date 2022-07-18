@@ -5,8 +5,12 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            List(0 ..< 5) { item in
-                Text("Hello Amjad")
+            List  {
+                ForEach(courses.filter { $0.title.contains(text) || text == ""
+                    
+                }) { item in
+                    Text(item.title)
+                }
             }
             .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("SwiftUI, React, UI Design, Figma"))
             .navigationTitle("Search")
