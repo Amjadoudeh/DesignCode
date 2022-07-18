@@ -7,6 +7,7 @@ struct CourseView: View {
     var course: Course = courses[0]
     @EnvironmentObject var model: Model
     @State var viewState: CGSize = .zero
+    @State var isDraggable = true
 
     var body: some View {
         ZStack {
@@ -24,29 +25,7 @@ struct CourseView: View {
             .background(.black.opacity(viewState.width / 500))
             .background(.ultraThinMaterial)
             .gesture(
-                DragGesture(minimumDistance: 20, coordinateSpace: .local)
-                    .onChanged { value in
-                        guard value.translation.width > 0 else { return }
-                        if value.startLocation.x < 100 {
-                            withAnimation(.closeCard) {
-                                viewState = value.translation
-                            }
-                        }
-                        
-                        if viewState.width > 120 {
-                            close()
-                        }
-                    }
-                    .onEnded { _ in
-                        if viewState.width > 80 {
-                            close()
-                        } else {
-                            withAnimation(.closeCard) {
-                                viewState = .zero
-                            }
-                        }
-
-                    }
+                drag
             )
             .ignoresSafeArea()
 
@@ -76,6 +55,33 @@ struct CourseView: View {
         appear[0] = false
         appear[1] = false
         appear[2] = false
+    }
+    
+    var drag: some Gesture {
+            DragGesture(minimumDistance: 20, coordinateSpace: .local)
+                .onChanged { value in
+                    guard value.translation.width > 0 else { return }
+                    if value.startLocation.x < 100 {
+                        withAnimation(.closeCard) {
+                            viewState = value.translation
+                        }
+                    }
+                    
+                    if viewState.width > 120 {
+                        close()
+                    }
+                }
+                .onEnded { _ in
+                    if viewState.width > 80 {
+                        close()
+                    } else {
+                        withAnimation(.closeCard) {
+                            viewState = .zero
+                        }
+                    }
+
+                }
+        
     }
 
     var cover: some View {
@@ -198,6 +204,7 @@ struct CourseView: View {
         withAnimation {
             viewState = .zero
         }
+        isDraggable = false
     }
 }
 
