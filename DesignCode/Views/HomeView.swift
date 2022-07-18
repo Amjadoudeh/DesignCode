@@ -22,6 +22,7 @@ struct HomeView: View {
                 Text("Courses".uppercased())
                     .sectionTitleModifier()
 
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 20)], spacing: 20) {
                 if !show {
                     cards
                 } else {
@@ -35,6 +36,8 @@ struct HomeView: View {
                         .padding(.horizontal, 20)
                     }
                 }
+                }
+                .padding(20)
             }
             .coordinateSpace(name: "scroll")
             /// customising a safe area on the top to make a better display for the content
@@ -86,6 +89,8 @@ struct HomeView: View {
                     let minX = proxy.frame(in: .global).minX
 
                     FeaturedItem(course: course)
+                        .frame(maxWidth: 500)
+                        .frame(maxWidth: .infinity)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -15), axis: (x: 0, y: 2, z: 10))
                         .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
@@ -95,6 +100,8 @@ struct HomeView: View {
                             Image(course.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .padding(20)
+                                .frame(maxWidth: 500)
                                 .frame(height: 230)
                                 .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
                                 .offset(x: 35, y: -80)

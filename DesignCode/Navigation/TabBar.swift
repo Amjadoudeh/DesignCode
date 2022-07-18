@@ -6,24 +6,28 @@ struct TabBar: View {
     @State var tabItemWidth: CGFloat = 0
 
     var body: some View {
-        HStack {
-            buttons
-        }
-        .padding(.horizontal, 8)
-        .padding(.top, 14)
-        .frame(height: 88, alignment: .top)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 34, style: .continuous))
-        /// using the background to creat a circle and make the hover effect by moving it
-        .background(
-            background
-        )
-        /// drawing the line above the circle
-        .overlay(
-            overlay
-        )
-        .strokeStyle(cornerRadius: 34)
-        .frame(maxHeight: .infinity, alignment: .bottom)
+        GeometryReader { proxy in
+            let hasHomeIndecator  = proxy.safeAreaInsets.bottom > 20
+            
+            HStack {
+                buttons
+            }
+            .padding(.horizontal, 8)
+            .padding(.top, 14)
+            .frame(height: hasHomeIndecator ? 88 : 62, alignment: .top)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: hasHomeIndecator ? 34 : 0, style: .continuous))
+            /// using the background to creat a circle and make the hover effect by moving it
+            .background(
+                background
+            )
+            /// drawing the line above the circle
+            .overlay(
+                overlay
+            )
+            .strokeStyle(cornerRadius: hasHomeIndecator ? 34 : 0)
+            .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
+        }
     }
 
     var buttons: some View {

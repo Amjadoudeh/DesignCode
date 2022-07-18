@@ -111,7 +111,7 @@ struct CourseView: View {
                     .blur(radius: secrollY > 0 ? secrollY / 30 : 0)
             )
             .mask(
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                RoundedRectangle(cornerRadius: appear[0] ? 0 : 30, style: .continuous)
                     .matchedGeometryEffect(id: "mask\(course.id)", in: namespace)
                     .offset(y: secrollY > 0 ? -secrollY : 0)
             )
