@@ -24,7 +24,7 @@ struct NavigationBar: View {
             HStack(spacing: 16) {
                 Button {
                     showSearch = true
-                    
+
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .font(.body.weight(.bold))
@@ -39,7 +39,7 @@ struct NavigationBar: View {
 
                 Button {
                     showAccount = true
-                    
+
                 } label: {
                 Image("Avatar Default")
 /// changing the order of the modifiers could change the design totally
@@ -65,7 +65,6 @@ struct NavigationBar: View {
     }
 
 }
-
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {

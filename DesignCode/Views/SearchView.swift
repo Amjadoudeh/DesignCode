@@ -3,17 +3,26 @@ import SwiftUI
 struct SearchView: View {
     @State var text = ""
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
         NavigationView {
-            List  {
+            List {
                 ForEach(courses.filter { $0.title.contains(text) || text == ""
-                    
+
                 }) { item in
                     Text(item.title)
                 }
             }
-            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("SwiftUI, React, UI Design, Figma"))
+            .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("SwiftUI, React, UI Design, Figma")) {
+                ForEach(suggestion) { suggestion in
+                    Button {
+                        text = suggestion.text
+                    } label: {
+                        Text(suggestion.text)
+                            .searchCompletion(suggestion.text)
+                    }
+                }
+            }
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: Button {

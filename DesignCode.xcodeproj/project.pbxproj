@@ -36,6 +36,7 @@
 		70FCF3362825585900979152 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCF3352825585900979152 /* LocalizationKeys.swift */; };
 		D00FB77A286DC8AD00E6589E /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FB779286DC8AD00E6589E /* Animation.swift */; };
 		D0AA86AC2885D722004AF1C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA86AB2885D722004AF1C1 /* SearchView.swift */; };
+		D0AA86AE2886F6C2004AF1C1 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA86AD2886F6C2004AF1C1 /* Suggestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		70FCF3352825585900979152 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		D00FB779286DC8AD00E6589E /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		D0AA86AB2885D722004AF1C1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D0AA86AD2886F6C2004AF1C1 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				7034A907281BEAE800AA9275 /* PreferenceKeys.swift */,
 				7037DFF1282E9FAC00EC21E0 /* Course.swift */,
 				70F5A392284FEAAB00076906 /* Model.swift */,
+				D0AA86AD2886F6C2004AF1C1 /* Suggestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				70230439283CF52900C56EF4 /* CourseView.swift in Sources */,
 				70FCF3362825585900979152 /* LocalizationKeys.swift in Sources */,
 				708A7EE12850FCA8001EB72F /* SignupView.swift in Sources */,
+				D0AA86AE2886F6C2004AF1C1 /* Suggestion.swift in Sources */,
 				707D4FF3281731FB00C0F636 /* FeaturedItem.swift in Sources */,
 				7037DFF2282E9FAC00EC21E0 /* Course.swift in Sources */,
 				70F5A393284FEAAB00076906 /* Model.swift in Sources */,
