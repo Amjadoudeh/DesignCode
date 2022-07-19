@@ -6,8 +6,26 @@ struct SearchView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                content
+            ScrollView {
+                VStack {
+                    content
+                }
+                .padding(20)
+                .background(.ultraThinMaterial, in:
+                                RoundedRectangle(cornerRadius: 30,style: .continuous))
+                    .strokeStyle(cornerRadius: 30)
+                    .padding(20)
+                    .background(
+                        Rectangle()
+                            .fill(.regularMaterial)
+                            .frame(height: 200)
+                            .frame(maxHeight: .infinity, alignment: .top)
+                            .blur(radius: 20)
+                            .offset(y: -200)
+                    )
+                    .background(
+                        Image("Blob 1").offset(x: -100 , y: -200)
+                    )
             }
             .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("SwiftUI, React, UI Design, Figma")) {
                 ForEach(suggestion) { suggestion in
@@ -45,6 +63,8 @@ struct SearchView: View {
                     Text(item.text)
                         .foregroundColor(.secondary)
                         .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
                 }
             }
             .padding(4)
