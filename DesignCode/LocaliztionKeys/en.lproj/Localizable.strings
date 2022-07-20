@@ -1,9 +1,7 @@
-/* 
+/*
   Localizable.strings
   DesignCode
-
   Created by Amjad Oudeh on 06.05.22.
-  
 */
 
 "FeaturedItem.mainTitle" = "SwiftUI for iOS 15";
