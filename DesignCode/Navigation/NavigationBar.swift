@@ -4,6 +4,8 @@ struct NavigationBar: View {
 
     let title: LocalizedStringKey
     @Binding var hasScrolled: Bool
+    @State var showSearch: Bool = false
+    @State var showAccount: Bool = false
 
     var body: some View {
         ZStack {
@@ -20,13 +22,25 @@ struct NavigationBar: View {
                 .offset(y: hasScrolled ? 0 : -4)
 
             HStack(spacing: 16) {
-                Image(systemName: "magnifyingglass")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(.secondary)
-                    .frame(width: 36, height: 36)
-                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .strokeStyle(cornerRadius: 14)
+                Button {
+                    showSearch = true
 
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .font(.body.weight(.bold))
+                        .foregroundColor(.secondary)
+                        .frame(width: 36, height: 36)
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .strokeStyle(cornerRadius: 14)
+                }
+                .sheet(isPresented: $showSearch) {
+                    SearchView()
+                }
+
+                Button {
+                    showAccount = true
+
+                } label: {
                 Image("Avatar Default")
 /// changing the order of the modifiers could change the design totally
                     .resizable()
@@ -35,6 +49,10 @@ struct NavigationBar: View {
                     .padding(8)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
                     .strokeStyle(cornerRadius: 18)
+                }
+                .sheet(isPresented: $showAccount) {
+                    AccountView()
+                }
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
             .padding(.trailing, 20)
