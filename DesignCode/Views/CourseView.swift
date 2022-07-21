@@ -19,6 +19,7 @@ struct CourseView: View {
                     .opacity(appear[2] ? 1 : 0)
 
             }
+            .coordinateSpace(name: "scroll")
             .background(Color("Background"))
             .mask(RoundedRectangle(cornerRadius: (viewState.width / 3), style: .continuous))
             .scaleEffect(viewState.width / -500 + 1)
@@ -85,7 +86,7 @@ struct CourseView: View {
     var cover: some View {
 
         GeometryReader { proxy in
-            let secrollY = proxy.frame(in: .global).minY
+            let secrollY = proxy.frame(in: .named("scroll")).minY
 
             VStack {
                 Spacer()
