@@ -14,20 +14,20 @@ struct SignupView: View {
                         .blendMode(.overlay)
                     Text("Access to +120 hours of courses, tutorials and livestreams")
                         .font(.subheadline)
-                        .foregroundColor(Color.white.opacity(0.6))
+                        .foregroundColor(Color.gray.opacity(0.6))
                     HStack(spacing: 12) {
                         Image(systemName: "envelope.open.fill")
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.gray)
 
                         TextField("Email address", text: $email)
-                            .foregroundColor(Color.white.opacity(0.6))
+                            .foregroundColor(Color.gray.opacity(0.6))
                             .autocapitalization(.none)
                             .textContentType(.emailAddress)
                     }
                     .frame(height: 52)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.white, lineWidth: 1.0)
+                            .stroke(Color.gray, lineWidth: 1.0)
                             .blendMode(.overlay)
                     )
                     .background(
@@ -37,17 +37,17 @@ struct SignupView: View {
                     )
                     HStack(spacing: 12) {
                         Image(systemName: "key.fill")
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.gray)
 
                         TextField("Password", text: $password)
-                            .foregroundColor(Color.white.opacity(0.6))
+                            .foregroundColor(Color.gray.opacity(0.6))
                             .autocapitalization(.none)
                             .textContentType(.password)
                     }
                     .frame(height: 52)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.white, lineWidth: 1.0)
+                            .stroke(Color.gray, lineWidth: 1.0)
                             .blendMode(.overlay)
                     )
                     .background(
@@ -55,10 +55,9 @@ struct SignupView: View {
                             .cornerRadius(16)
                             .opacity(0.8)
                     )
-                    Button(action: {
+                    Button {
                         
-                        print("Sign up")
-                    }, label: {
+                    } label: {
                         GeometryReader { geometry in
                             ZStack {
                                 AngularGradient(gradient: Gradient(colors: [Color.purple, Color.red]), center: .center, angle: .degrees(0))
@@ -89,7 +88,9 @@ struct SignupView: View {
                             }
                         }
                         .frame(height: 50)
-                    })
+                    }
+                    .buttonStyle(.Angular)
+                    .controlSize(.small)
 
                     Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy")
                         .font(.footnote)
