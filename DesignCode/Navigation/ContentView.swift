@@ -29,7 +29,7 @@ struct ContentView: View {
                         withAnimation {
                             showModel = false
                         }
-                        
+
                     } label: {
                         Image(systemName: "xmark")
                             .font(.body.weight(.bold))
@@ -39,7 +39,7 @@ struct ContentView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .padding(20)
-                    
+
                 }
                 .zIndex(1)
             }

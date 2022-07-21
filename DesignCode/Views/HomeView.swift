@@ -86,7 +86,7 @@ struct HomeView: View {
 
     var featured: some View {
         TabView {
-            ForEach(Array(featuredCourses.enumerated()),id: \.offset) { index, course in
+            ForEach(Array(featuredCourses.enumerated()), id: \.offset) { index, course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
 

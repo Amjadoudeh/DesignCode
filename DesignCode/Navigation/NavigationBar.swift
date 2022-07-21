@@ -27,7 +27,6 @@ struct NavigationBar: View {
                     withAnimation {
                         showSearch = true
                     }
-                    
 
                 } label: {
                     Image(systemName: "magnifyingglass")
