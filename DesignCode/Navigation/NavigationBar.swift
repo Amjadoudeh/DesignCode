@@ -6,6 +6,7 @@ struct NavigationBar: View {
     @Binding var hasScrolled: Bool
     @State var showSearch: Bool = false
     @State var showAccount: Bool = false
+    @AppStorage("showModel") var showModel = false
 
     var body: some View {
         ZStack {
@@ -23,7 +24,10 @@ struct NavigationBar: View {
 
             HStack(spacing: 16) {
                 Button {
-                    showSearch = true
+                    withAnimation {
+                        showSearch = true
+                    }
+                    
 
                 } label: {
                     Image(systemName: "magnifyingglass")
@@ -38,7 +42,8 @@ struct NavigationBar: View {
                 }
 
                 Button {
-                    showAccount = true
+              //      showAccount = true
+                    showModel = true
 
                 } label: {
                 Image("Avatar Default")

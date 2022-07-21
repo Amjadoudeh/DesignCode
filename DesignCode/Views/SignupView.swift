@@ -6,11 +6,6 @@ struct SignupView: View {
     @State var password: String = " "
 
     var body: some View {
-        ZStack {
-            Image("Background 2")
-                .resizable()
-              //  .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
 
             VStack {
                 VStack(alignment: .leading, spacing: 16) {
@@ -61,6 +56,7 @@ struct SignupView: View {
                             .opacity(0.8)
                     )
                     Button(action: {
+                        
                         print("Sign up")
                     }, label: {
                         GeometryReader { geometry in
@@ -117,12 +113,16 @@ struct SignupView: View {
                         })
                     }
                 }
-                .padding(20)
+                
             }
-            .background(.ultraThinMaterial)
-            .cornerRadius(30)
-            .padding(.horizontal)
-        }
+            .padding(20)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .strokeStyle(cornerRadius: 30)
+            .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
+            .padding(20)
+            .background(
+                Image("Blob 1").offset(x:200, y: -100)
+            )
     }
 }
 

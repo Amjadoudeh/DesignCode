@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
     @EnvironmentObject var model: Model
+    @AppStorage("showModel") var showModel = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -19,6 +20,29 @@ struct ContentView: View {
                 }
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
+            if showModel {
+                ZStack {
+                    Color.clear.background(.regularMaterial)
+                        .ignoresSafeArea()
+                    SignupView()
+                    Button {
+                        withAnimation {
+                            showModel = false
+                        }
+                        
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.body.weight(.bold))
+                            .foregroundColor(.secondary)
+                            .padding(8)
+                            .background(.ultraThinMaterial, in: Circle())
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding(20)
+                    
+                }
+                .zIndex(1)
+            }
         }
         /// customise a safe area for the TabBar
         .safeAreaInset(edge: .bottom, content: {
