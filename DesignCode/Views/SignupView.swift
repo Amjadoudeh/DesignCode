@@ -40,7 +40,8 @@ struct SignupView: View {
                     Text("By clicking on ")
                     + Text("_Create an account_").foregroundColor(.primary.opacity(0.7))
                     + Text(", you agree to our **Terms of service** and **[Privacy Policy](https://amjadoudeh.com/)**")
-
+                    Divider()
+                    
                     HStack {
                         Text("Already have an account?")
                             .foregroundColor(.secondary)
