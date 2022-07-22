@@ -16,7 +16,7 @@ struct SignupView: View {
                     .foregroundColor(.secondary)
                 TextField("Email", text: $email)
                     .inputStyle(icon: "mail")
-                TextField("Password", text: $email)
+                SecureField("Password", text: $email)
                     .inputStyle(icon: "key")
                     
                 Button {
