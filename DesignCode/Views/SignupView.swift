@@ -15,18 +15,10 @@ struct SignupView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 TextField("Email", text: $email)
-                    .padding(15)
-                    .padding(.leading, 40)
-                    .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-                    .strokeStyle(cornerRadius: 20)
-                    .overlay(
-                        Image(systemName: "mail")
-                            .foregroundColor(.secondary)
-                            .frame(width: 36, height: 36)
-                            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                            .frame(maxWidth: .infinity, alignment:  .leading)
-                            .padding(8)
-                    )
+                    .inputStyle(icon: "mail")
+                TextField("Password", text: $email)
+                    .inputStyle(icon: "key")
+                    
                 Button {
 
                 } label: {
