@@ -14,10 +14,17 @@ struct SignupView: View {
                 Text("Access to +120 hours of courses, tutorials and livestreams")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                
                 TextField("Email", text: $email)
                     .inputStyle(icon: "mail")
-                SecureField("Password", text: $email)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                
+                SecureField("Password", text: $password)
                     .inputStyle(icon: "key")
+                    .textContentType(.password)
                     
                 Button {
 
