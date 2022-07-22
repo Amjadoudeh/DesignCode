@@ -1,9 +1,14 @@
 import SwiftUI
 
 struct SignupView: View {
+    enum Field: Hashable {
+        case email
+        case password
+    }
 
     @State var email: String = ""
     @State var password: String = ""
+    @FocusState var focusedField: Field?
 
     var body: some View {
         VStack {
@@ -21,10 +26,14 @@ struct SignupView: View {
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
+                    .focused($focusedField, equals: .email)
+                    .shadow(color: focusedField == .email ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                 
                 SecureField("Password", text: $password)
                     .inputStyle(icon: "key")
                     .textContentType(.password)
+                    .focused($focusedField, equals: .password)
+                    .shadow(color: focusedField == .password ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                     
                 Button {
 
