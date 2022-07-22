@@ -13,16 +13,35 @@ struct SignupView: View {
                     .blendMode(.overlay)
                 Text("Access to +120 hours of courses, tutorials and livestreams")
                     .font(.subheadline)
-                    .foregroundColor(Color.gray.opacity(0.6))
+                    .foregroundColor(.secondary)
                 Button {
 
                 } label: {
-                    Text("Sign up")
+                    Text("Create an account")
                         .bold()
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.Angular)
                 .controlSize(.large)
+
+                Group {
+                    Text("By clicking on ")
+                    + Text("_Create an account_").foregroundColor(.primary.opacity(0.7))
+                    + Text(", you agree to our **Terms of service** and **[Privacy Policy](https://amjadoudeh.com/)**")
+
+                    HStack {
+                        Text("Already have an account?")
+                            .foregroundColor(.secondary)
+                        Button { } label: {
+                            Text("**Sign in**")
+                            // UITableViewController -> keybord
+                            // delegate method -> keybord
+
+                        }
+                    }
+                }
+                .font(.footnote)
+                .foregroundColor(.secondary)
             }
             .padding(20)
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -38,6 +57,6 @@ struct SignupView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }
