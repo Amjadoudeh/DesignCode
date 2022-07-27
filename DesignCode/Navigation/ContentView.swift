@@ -7,7 +7,6 @@ struct ContentView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-/// using switch instead of using if 
                 switch selectedTab {
                 case .home:
                     HomeView()
@@ -16,31 +15,12 @@ struct ContentView: View {
                 case .notifications:
                     HomeView()
                 case .library:
-                    SignUpView()
+                    HomeView()
                 }
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
             if showModel {
-                ZStack {
-                    Color.clear.background(.regularMaterial)
-                        .ignoresSafeArea()
-                    SignUpView()
-                    Button {
-                        withAnimation {
-                            showModel = false
-                        }
-
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.secondary)
-                            .padding(8)
-                            .background(.ultraThinMaterial, in: Circle())
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    .padding(20)
-
-                }
+               ModalView()
                 .zIndex(1)
             }
         }
