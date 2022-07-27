@@ -16,7 +16,7 @@ struct ContentView: View {
                 case .notifications:
                     HomeView()
                 case .library:
-                    SignupView()
+                    SignUpView()
                 }
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
@@ -24,7 +24,7 @@ struct ContentView: View {
                 ZStack {
                     Color.clear.background(.regularMaterial)
                         .ignoresSafeArea()
-                    SignupView()
+                    SignUpView()
                     Button {
                         withAnimation {
                             showModel = false

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SignupView: View {
+struct SignUpView: View {
     enum Field: Hashable {
         case email
         case password
@@ -12,6 +12,7 @@ struct SignupView: View {
     @State var circuleY:  CGFloat = 0
     @State var emailY: CGFloat = 0
     @State var passwordY: CGFloat = 0
+    @EnvironmentObject var model: Model
 
     var body: some View {
         VStack {
@@ -65,7 +66,9 @@ struct SignupView: View {
                     HStack {
                         Text("Already have an account?")
                             .foregroundColor(.secondary)
-                        Button { } label: {
+                        Button {
+                            model.selectedModal = .signIn
+                        } label: {
                             Text("**Sign in**")
                             // UITableViewController -> keybord
                             // delegate method -> keybord
@@ -112,7 +115,8 @@ struct SignupView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            SignupView()
+            SignUpView()
+                .environmentObject(Model())
         }
 //            .preferredColorScheme(.dark)
     }

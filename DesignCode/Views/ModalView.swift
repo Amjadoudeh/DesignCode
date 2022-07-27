@@ -5,10 +5,9 @@ struct ModalView: View {
     
     var body: some View {
         ZStack {
-            SignupView()
             switch model.selectedModal {
-            case .signIn: SignupView()
-            case .signUp: SignupView()
+            case .signIn: SignUpView()
+            case .signUp: SignInView()
             }
         }
     }
