@@ -33,7 +33,7 @@ struct SignupView: View {
                     .shadow(color: focusedField == .email ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                     .overlay(geometry)
                     .onPreferenceChange(CirculePreferenceKey.self) { value in
-                        emailY = value
+                        emailY = value - 60
                         circuleY  = value
                     }
                 SecureField("Password", text: $password)
@@ -43,7 +43,8 @@ struct SignupView: View {
                     .shadow(color: focusedField == .password ? .primary.opacity(0.3) : .clear, radius: 10, x: 0, y: 3)
                     .overlay(geometry)
                     .onPreferenceChange(CirculePreferenceKey.self) { value in
-                        passwordY = value
+                        passwordY = value - 60
+                       
                     }
                 Button {
 
