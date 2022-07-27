@@ -58,9 +58,6 @@ struct SignInView: View {
                 .controlSize(.large)
 
                 Group {
-//                    Text("By clicking on ")
-//                    + Text("_Create an account_").foregroundColor(.primary.opacity(0.7))
-//                    + Text(", you agree to our **Terms of service** and **[Privacy Policy](https://amjadoudeh.com/)**")
                     Divider()
                     
                     HStack {
