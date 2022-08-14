@@ -3,6 +3,7 @@ import SwiftUI
 struct ModalView: View {
     @EnvironmentObject var model: Model
     @AppStorage("showModel") var showModel = true
+    @State var viewState: CGSize = .zero
     
     var body: some View {
         ZStack {
@@ -28,6 +29,19 @@ struct ModalView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding(20)
         }
+    }
+    
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged { value in
+                viewState = value.translation
+            }
+            .onEnded { value in
+                withAnimation(.openCard) {
+                    viewState = .zero
+                }
+                
+            }
     }
 }
 
