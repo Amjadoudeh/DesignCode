@@ -16,8 +16,11 @@ struct ModalView: View {
                 case .signUp: SignUpView()
                 }
             }
+            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .offset(x: viewState.width, y: viewState.height)
             .rotationEffect(.degrees(viewState.width)/30)
+            .hueRotation(.degrees(viewState.width)/5)
+            .hueRotation(.degrees(viewState.height)/5)
             .gesture(drag)
             .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
             .padding(20)
