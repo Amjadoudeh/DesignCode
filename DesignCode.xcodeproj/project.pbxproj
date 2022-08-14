@@ -151,10 +151,8 @@
 				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
 				701C56992815EE7900C7BEE1 /* HomeView.swift */,
 				70230438283CF52900C56EF4 /* CourseView.swift */,
-				708A7EE02850FCA8001EB72F /* SignUpView.swift */,
 				D0AA86AB2885D722004AF1C1 /* SearchView.swift */,
-				D0B6E88F28911F6C00A30B78 /* ModalView.swift */,
-				D0B6E891289120CD00A30B78 /* SignInView.swift */,
+				D0A9FDD928A95E1B0056535D /* Models */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +262,16 @@
 				70FCF3322825468700979152 /* Localizable.strings */,
 			);
 			path = LocaliztionKeys;
+			sourceTree = "<group>";
+		};
+		D0A9FDD928A95E1B0056535D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				708A7EE02850FCA8001EB72F /* SignUpView.swift */,
+				D0B6E88F28911F6C00A30B78 /* ModalView.swift */,
+				D0B6E891289120CD00A30B78 /* SignInView.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
