@@ -10,15 +10,20 @@ struct ModalView: View {
             Color.clear.background(.regularMaterial)
                 .ignoresSafeArea()
             
-            switch model.selectedModal {
-            case .signIn: SignInView()
-            case .signUp: SignUpView()
+            Group {
+                switch model.selectedModal {
+                case .signIn: SignInView()
+                case .signUp: SignUpView()
+                }
             }
+            .offset(x: viewState.width, y: viewState.height)
+            .gesture(drag)
+            
             Button {
                 withAnimation {
                     showModel = false
                 }
-
+                
             } label: {
                 Image(systemName: "xmark")
                     .font(.body.weight(.bold))
