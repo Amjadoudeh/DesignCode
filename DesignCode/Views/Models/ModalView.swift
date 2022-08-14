@@ -51,10 +51,15 @@ struct ModalView: View {
                 viewState = value.translation
             }
             .onEnded { value in
+                if value.translation.height > 200 {
+                    withAnimation {
+                        showModel = false
+                    }
+                } else {
                 withAnimation(.openCard) {
                     viewState = .zero
+                    }
                 }
-                
             }
     }
 }
