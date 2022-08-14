@@ -17,7 +17,13 @@ struct ModalView: View {
                 }
             }
             .offset(x: viewState.width, y: viewState.height)
+            .rotationEffect(.degrees(viewState.width)/30)
             .gesture(drag)
+            .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
+            .padding(20)
+            .background(
+                Image("Blob 1").offset(x: 200, y: -100)
+            )
             
             Button {
                 withAnimation {
