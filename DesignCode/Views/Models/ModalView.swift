@@ -4,6 +4,7 @@ struct ModalView: View {
     @EnvironmentObject var model: Model
     @AppStorage("showModel") var showModel = true
     @State var viewState: CGSize = .zero
+    @AppStorage("isLogged") var isLogged = false
     
     var body: some View {
         ZStack {
@@ -43,6 +44,11 @@ struct ModalView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding(20)
         }
+        .onChange(of: isLogged) { newValue in
+            if newValue {
+                dismissModal()
+            }
+        }
     }
     
     var drag: some Gesture {
@@ -56,11 +62,17 @@ struct ModalView: View {
                         showModel = false
                     }
                 } else {
-                withAnimation(.openCard) {
-                    viewState = .zero
+                    withAnimation(.openCard) {
+                        viewState = .zero
                     }
                 }
             }
+    }
+    
+    func dismissModal() {
+        withAnimation(.linear.delay(0.3)) {
+            showModel = false
+        }
     }
 }
 

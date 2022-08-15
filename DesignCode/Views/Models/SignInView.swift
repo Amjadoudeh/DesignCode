@@ -14,6 +14,7 @@ struct SignInView: View {
     @State var passwordY: CGFloat = 0
     @EnvironmentObject var model: Model
     @AppStorage("isLogged") var isLogged = false
+
     
     var body: some View {
         VStack {
@@ -50,6 +51,7 @@ struct SignInView: View {
                     }
                 Button {
                     isLogged = true
+                    
                 } label: {
                     Text("Sign in")
                         .bold()
