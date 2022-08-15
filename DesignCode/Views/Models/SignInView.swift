@@ -5,7 +5,7 @@ struct SignInView: View {
         case email
         case password
     }
-
+    
     @State var email: String = ""
     @State var password: String = ""
     @FocusState var focusedField: Field?
@@ -13,7 +13,8 @@ struct SignInView: View {
     @State var emailY: CGFloat = 0
     @State var passwordY: CGFloat = 0
     @EnvironmentObject var model: Model
-
+    @AppStorage("isLogged") var isLogged = false
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 16) {
@@ -45,10 +46,10 @@ struct SignInView: View {
                     .overlay(geometry)
                     .onPreferenceChange(CirculePreferenceKey.self) { value in
                         passwordY = value - 60
-                       
+                        
                     }
                 Button {
-
+                    isLogged = true
                 } label: {
                     Text("Sign in")
                         .bold()
@@ -56,7 +57,7 @@ struct SignInView: View {
                 }
                 .buttonStyle(.Angular)
                 .controlSize(.large)
-
+                
                 Group {
                     Divider()
                     
@@ -69,7 +70,7 @@ struct SignInView: View {
                             Text("**Sign Up**")
                             // UITableViewController -> keybord
                             // delegate method -> keybord
-
+                            
                         }
                     }
                 }
