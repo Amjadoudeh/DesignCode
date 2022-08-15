@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Coin: Identifiable, Codable {
     var id: Int
-    var coinName: String
+    var coin_name: String
     var acronym: String
     var logo: String
 }

@@ -7,6 +7,7 @@ struct AccountView: View {
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("isLogged") var isLogged = true
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var coinModel = CoinModel()
 
     var body: some View {
         NavigationView {
@@ -14,6 +15,7 @@ struct AccountView: View {
                 profile
                 menu
                 links
+                coins
                 
                 Button {
                     isLogged = false
@@ -22,7 +24,12 @@ struct AccountView: View {
                     Text("Sign out")
                 }
                 .tint(.red)
-
+            }
+            .task {
+                await coinModel.fetchCoins()
+            }
+            .refreshable {
+                await coinModel.fetchCoins()
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
@@ -119,6 +126,14 @@ struct AccountView: View {
         }
         .accentColor(.primary)
         .listRowSeparator(.hidden)
+    }
+    
+    var coins: some View {
+        Section(header: Text("Coins")) {
+            ForEach(coinModel.coins) { coin in
+                Text(coin.coin_name)
+            }
+        }
     }
 
     var pinButton: some View {
