@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct StrokeStyle: ViewModifier {
+struct StrokeStyleModifier: ViewModifier {
     // created a variable cornerRadius to be able to pass the value of it in the modifier as Dynamic value: type CGFloat
     var cornerRadius: CGFloat
     // adopting to the darkMode
@@ -29,6 +29,6 @@ struct StrokeStyle: ViewModifier {
 extension View {
     // the function is receiving a cornerRaduis type CGFloat and its value is 30 so it will be the Defaul value.
     func strokeStyle(cornerRadius: CGFloat = 30) -> some View {
-        modifier(StrokeStyle(cornerRadius: cornerRadius))
+        modifier(StrokeStyleModifier(cornerRadius: cornerRadius))
     }
 }
