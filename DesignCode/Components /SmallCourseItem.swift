@@ -4,7 +4,7 @@ struct SmallCourseItem: View {
     var course: Course = courses[0]
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 2) {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(.black.opacity(0.1))
                 .overlay(Image(course.image)
@@ -18,6 +18,7 @@ struct SmallCourseItem: View {
                 .lineLimit(1)
             Text(course.title)
                 .fontWeight(.semibold)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
         }
         .padding()

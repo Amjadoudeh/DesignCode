@@ -11,7 +11,7 @@ struct ContentView: View {
                 case .home:
                     HomeView()
                 case .explore:
-                    AccountView()
+                    ExploreView()
                 case .notifications:
                     HomeView()
                 case .library:
