@@ -52,6 +52,7 @@
 		D0D964E028AE772F00D265DE /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DF28AE772F00D265DE /* ExploreView.swift */; };
 		D0D964E228AE77F500D265DE /* SmallCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E128AE77F500D265DE /* SmallCourseItem.swift */; };
 		D0D964E428AE8AAC00D265DE /* Handbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E328AE8AAC00D265DE /* Handbook.swift */; };
+		D0D964E628AE8B8000D265DE /* HandbookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E528AE8B8000D265DE /* HandbookItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		D0D964DF28AE772F00D265DE /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		D0D964E128AE77F500D265DE /* SmallCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCourseItem.swift; sourceTree = "<group>"; };
 		D0D964E328AE8AAC00D265DE /* Handbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handbook.swift; sourceTree = "<group>"; };
+		D0D964E528AE8B8000D265DE /* HandbookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				D07DA6A528ABB25C00F66A46 /* SectionRow.swift */,
 				D0D964DB28AE4F9700D265DE /* PlayView.swift */,
 				D0D964E128AE77F500D265DE /* SmallCourseItem.swift */,
+				D0D964E528AE8B8000D265DE /* HandbookItem.swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				D07DA6A028AA72A100F66A46 /* Coin.swift in Sources */,
 				D07DA6A428ABB14D00F66A46 /* CourseSection.swift in Sources */,
 				70BFA44D2800EFF1002FD946 /* DesignCodeApp.swift in Sources */,
+				D0D964E628AE8B8000D265DE /* HandbookItem.swift in Sources */,
 				70230437283CCD1000C56EF4 /* CourseItem.swift in Sources */,
 				70230439283CF52900C56EF4 /* CourseView.swift in Sources */,
 				70FCF3362825585900979152 /* LocalizationKeys.swift in Sources */,
