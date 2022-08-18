@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct AccountView: View {
-/// sitting a state for deleting
+    /// sitting a state for deleting
     @State var isDeleted = false
     @State var isPinned = false
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("isLogged") var isLogged = true
     @Environment(\.dismiss) var dismiss
     @ObservedObject var coinModel = CoinModel()
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -40,27 +40,27 @@ struct AccountView: View {
             })
         }
     }
-
+    
     var profile: some View {
         VStack(spacing: 8) {
             Image(systemName:
                     "person.crop.circle.fill.badge.checkmark")
-                .symbolVariant(.circle.fill)
-                .font(.system(size: 32))
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.blue, .blue.opacity(0.3))
-                .padding()
-                .background(Circle().fill(.ultraThinMaterial))
-        /// will make an intersting shape using modifiers
-                .background(
-                    HexagonView()
-                                .offset(x: -50, y: -100)
-                )
-                .background(
-                    BlobView()
-                        .offset(x: 190, y: 80)
-                        .scaleEffect(0.4)
-                )
+            .symbolVariant(.circle.fill)
+            .font(.system(size: 32))
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(.blue, .blue.opacity(0.3))
+            .padding()
+            .background(Circle().fill(.ultraThinMaterial))
+            /// will make an intersting shape using modifiers
+            .background(
+                HexagonView()
+                    .offset(x: -50, y: -100)
+            )
+            .background(
+                BlobView()
+                    .offset(x: 190, y: 80)
+                    .scaleEffect(0.4)
+            )
             Text("Amjad Oudeh")
                 .font(.title.weight(.semibold))
             HStack {
@@ -73,7 +73,7 @@ struct AccountView: View {
         .frame(maxWidth: .infinity)
         .padding()
     }
-
+    
     var menu: some View {
         Section {
             NavigationLink(destination: HomeView()) {
@@ -93,10 +93,10 @@ struct AccountView: View {
         .listRowSeparatorTint(.blue) /// Changing the color of the separator
         .listRowSeparator(.hidden)
     }
-
+    
     var links: some View {
         Section {
-
+            
             if !isDeleted {
                 Link(destination: URL(string: "https://amjadoudeh.com")!) {
                     HStack {
@@ -136,7 +136,7 @@ struct AccountView: View {
                         image.resizable()
                             .aspectRatio(contentMode: .fit)
                     } placeholder: {
-                         ProgressView()
+                        ProgressView()
                     }
                     .frame(width: 32, height: 32)
                     VStack(alignment: .leading, spacing: 4) {
@@ -150,11 +150,11 @@ struct AccountView: View {
             }
         }
     }
-
+    
     var pinButton: some View {
         Button(action: { isPinned.toggle() }) {
             if isPinned {
-            Label("Pin", systemImage: "pin")
+                Label("Pin", systemImage: "pin")
             } else {
                 Label("Unpin", systemImage: "pin.slash")
             }
