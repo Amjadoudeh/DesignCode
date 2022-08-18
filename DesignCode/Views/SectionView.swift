@@ -9,7 +9,7 @@ struct SectionView: View {
         ZStack {
             ScrollView {
                 cover
-                
+                    .overlay(PlayView().overlay(CircularProgressView(value: section.progress,lineWidth: 5).padding(24)))
                 content
                     .offset(y: 120)
                     .padding(.bottom, 200)
