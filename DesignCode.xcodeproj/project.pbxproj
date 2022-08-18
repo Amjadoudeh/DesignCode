@@ -171,10 +171,10 @@
 				70EB0AA528061FDD002EC3CE /* AccountView.swift */,
 				701C56992815EE7900C7BEE1 /* HomeView.swift */,
 				70230438283CF52900C56EF4 /* CourseView.swift */,
+				D0D964DF28AE772F00D265DE /* ExploreView.swift */,
 				D07DA6A728ABB9D800F66A46 /* SectionView.swift */,
 				D0AA86AB2885D722004AF1C1 /* SearchView.swift */,
 				D0A9FDD928A95E1B0056535D /* Modals */,
-				D0D964DF28AE772F00D265DE /* ExploreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
