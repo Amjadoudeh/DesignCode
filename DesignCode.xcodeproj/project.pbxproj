@@ -49,6 +49,8 @@
 		D0CCBCC5288AB1C800912B3D /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBCC4288AB1C800912B3D /* InputStyle.swift */; };
 		D0D964DC28AE4F9700D265DE /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DB28AE4F9700D265DE /* PlayView.swift */; };
 		D0D964DE28AE748D00D265DE /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DD28AE748D00D265DE /* PlayShape.swift */; };
+		D0D964E028AE772F00D265DE /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DF28AE772F00D265DE /* ExploreView.swift */; };
+		D0D964E228AE77F500D265DE /* SmallCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E128AE77F500D265DE /* SmallCourseItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		D0CCBCC4288AB1C800912B3D /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
 		D0D964DB28AE4F9700D265DE /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		D0D964DD28AE748D00D265DE /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
+		D0D964DF28AE772F00D265DE /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		D0D964E128AE77F500D265DE /* SmallCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCourseItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 				D07DA6A728ABB9D800F66A46 /* SectionView.swift */,
 				D0AA86AB2885D722004AF1C1 /* SearchView.swift */,
 				D0A9FDD928A95E1B0056535D /* Modals */,
+				D0D964DF28AE772F00D265DE /* ExploreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				D07DA6A128ABAAD800F66A46 /* CircularProgressView.swift */,
 				D07DA6A528ABB25C00F66A46 /* SectionRow.swift */,
 				D0D964DB28AE4F9700D265DE /* PlayView.swift */,
+				D0D964E128AE77F500D265DE /* SmallCourseItem.swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -440,7 +446,9 @@
 				70E846392803942100E648EE /* Styles.swift in Sources */,
 				7023043B283D1D0200C56EF4 /* TextMofifiers.swift in Sources */,
 				701C569828129D3E00C7BEE1 /* Tab.swift in Sources */,
+				D0D964E228AE77F500D265DE /* SmallCourseItem.swift in Sources */,
 				7083CD422829BC080067B124 /* AnimatableFontModifier.swift in Sources */,
+				D0D964E028AE772F00D265DE /* ExploreView.swift in Sources */,
 				D0B6E89028911F6C00A30B78 /* ModalView.swift in Sources */,
 				D0A9FDDB28AA2D380056535D /* AvatarView.swift in Sources */,
 				707D4FF52817395500C0F636 /* NavigationBar.swift in Sources */,
