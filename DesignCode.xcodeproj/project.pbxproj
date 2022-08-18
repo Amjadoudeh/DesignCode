@@ -51,6 +51,7 @@
 		D0D964DE28AE748D00D265DE /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DD28AE748D00D265DE /* PlayShape.swift */; };
 		D0D964E028AE772F00D265DE /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964DF28AE772F00D265DE /* ExploreView.swift */; };
 		D0D964E228AE77F500D265DE /* SmallCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E128AE77F500D265DE /* SmallCourseItem.swift */; };
+		D0D964E428AE8AAC00D265DE /* Handbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E328AE8AAC00D265DE /* Handbook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		D0D964DD28AE748D00D265DE /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		D0D964DF28AE772F00D265DE /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		D0D964E128AE77F500D265DE /* SmallCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCourseItem.swift; sourceTree = "<group>"; };
+		D0D964E328AE8AAC00D265DE /* Handbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handbook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				D0AA86AD2886F6C2004AF1C1 /* Suggestion.swift */,
 				D07DA69F28AA72A100F66A46 /* Coin.swift */,
 				D07DA6A328ABB14D00F66A46 /* CourseSection.swift */,
+				D0D964E328AE8AAC00D265DE /* Handbook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				D07DA6A628ABB25C00F66A46 /* SectionRow.swift in Sources */,
 				707D4FF3281731FB00C0F636 /* FeaturedItem.swift in Sources */,
 				D0D964DE28AE748D00D265DE /* PlayShape.swift in Sources */,
+				D0D964E428AE8AAC00D265DE /* Handbook.swift in Sources */,
 				7037DFF2282E9FAC00EC21E0 /* Course.swift in Sources */,
 				70F5A393284FEAAB00076906 /* Model.swift in Sources */,
 				7034A908281BEAE800AA9275 /* PreferenceKeys.swift in Sources */,
