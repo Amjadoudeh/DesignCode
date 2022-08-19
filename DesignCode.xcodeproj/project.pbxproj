@@ -55,6 +55,7 @@
 		D0D964E628AE8B8000D265DE /* HandbookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E528AE8B8000D265DE /* HandbookItem.swift */; };
 		D0D964EA28AF9C5500D265DE /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E928AF9C5500D265DE /* TextModifier.swift */; };
 		D0D964EC28AF9E8D00D265DE /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964EB28AF9E8D00D265DE /* Topic.swift */; };
+		D0D964EE28AF9FE700D265DE /* TopicListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964ED28AF9FE700D265DE /* TopicListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		D0D964E528AE8B8000D265DE /* HandbookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookItem.swift; sourceTree = "<group>"; };
 		D0D964E928AF9C5500D265DE /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		D0D964EB28AF9E8D00D265DE /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		D0D964ED28AF9FE700D265DE /* TopicListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				D0D964DB28AE4F9700D265DE /* PlayView.swift */,
 				D0D964E128AE77F500D265DE /* SmallCourseItem.swift */,
 				D0D964E528AE8B8000D265DE /* HandbookItem.swift */,
+				D0D964ED28AF9FE700D265DE /* TopicListRow.swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				D07DA6A028AA72A100F66A46 /* Coin.swift in Sources */,
 				D07DA6A428ABB14D00F66A46 /* CourseSection.swift in Sources */,
 				70BFA44D2800EFF1002FD946 /* DesignCodeApp.swift in Sources */,
+				D0D964EE28AF9FE700D265DE /* TopicListRow.swift in Sources */,
 				D0D964E628AE8B8000D265DE /* HandbookItem.swift in Sources */,
 				70230437283CCD1000C56EF4 /* CourseItem.swift in Sources */,
 				70230439283CF52900C56EF4 /* CourseView.swift in Sources */,
