@@ -4,8 +4,18 @@ struct ExploreView: View {
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
-            
-            coursesSection
+            ScrollView {
+                
+                coursesSection
+                
+                Text("popular".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(20)
+                
+                handbooksSection
+            }
             .safeAreaInset(edge: .top) {
                 Color.clear.frame(height: 70)
             }
@@ -24,6 +34,15 @@ struct ExploreView: View {
             Spacer()
             
         }
+    }
+    
+    var handbooksSection: some View {
+        HStack(alignment: .top, spacing: 16) {
+            ForEach(handbooks) { handbook in
+                HandbookItem(handbook: handbook)
+            }
+        }
+        .padding(.horizontal, 20)
     }
 }
 
