@@ -7,6 +7,10 @@ struct ExploreView: View {
             ScrollView {
                 coursesSection
                 
+                Text("Topics".uppercased())
+                    .titleStyle()
+                topicsSection
+                
                 Text("popular".uppercased())
                     .titleStyle()
                 
@@ -38,6 +42,18 @@ struct ExploreView: View {
                 HandbookItem(handbook: handbook)
             }
         }
+        .padding(.horizontal, 20)
+    }
+    
+    var topicsSection: some View {
+        VStack {
+            ForEach(topics) { topic in
+                TopicListRow(topic: topic)
+            }
+        }
+        .padding(20)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .strokeStyle(cornerRadius: 30)
         .padding(.horizontal, 20)
     }
 }
