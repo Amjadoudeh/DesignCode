@@ -53,6 +53,7 @@
 		D0D964E228AE77F500D265DE /* SmallCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E128AE77F500D265DE /* SmallCourseItem.swift */; };
 		D0D964E428AE8AAC00D265DE /* Handbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E328AE8AAC00D265DE /* Handbook.swift */; };
 		D0D964E628AE8B8000D265DE /* HandbookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E528AE8B8000D265DE /* HandbookItem.swift */; };
+		D0D964EA28AF9C5500D265DE /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964E928AF9C5500D265DE /* TextModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		D0D964E128AE77F500D265DE /* SmallCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCourseItem.swift; sourceTree = "<group>"; };
 		D0D964E328AE8AAC00D265DE /* Handbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handbook.swift; sourceTree = "<group>"; };
 		D0D964E528AE8B8000D265DE /* HandbookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookItem.swift; sourceTree = "<group>"; };
+		D0D964E928AF9C5500D265DE /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				D0CCBCC22889658F00912B3D /* AngularButtonStyle.swift */,
 				D0CCBCC4288AB1C800912B3D /* InputStyle.swift */,
 				D0D964DD28AE748D00D265DE /* PlayShape.swift */,
+				D0D964E928AF9C5500D265DE /* TextModifier.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				701C569A2815EE7900C7BEE1 /* HomeView.swift in Sources */,
+				D0D964EA28AF9C5500D265DE /* TextModifier.swift in Sources */,
 				D0CCBCC5288AB1C800912B3D /* InputStyle.swift in Sources */,
 				D07DA6A828ABB9D800F66A46 /* SectionView.swift in Sources */,
 				70EB0AA628061FDD002EC3CE /* AccountView.swift in Sources */,

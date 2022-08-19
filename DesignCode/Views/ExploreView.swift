@@ -5,14 +5,10 @@ struct ExploreView: View {
         ZStack {
             Color("Background").ignoresSafeArea()
             ScrollView {
-                
                 coursesSection
                 
                 Text("popular".uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(20)
+                    .titleStyle()
                 
                 handbooksSection
             }
