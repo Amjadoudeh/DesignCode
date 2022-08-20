@@ -57,6 +57,7 @@
 		D0D964EC28AF9E8D00D265DE /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964EB28AF9E8D00D265DE /* Topic.swift */; };
 		D0D964EE28AF9FE700D265DE /* TopicListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964ED28AF9FE700D265DE /* TopicListRow.swift */; };
 		D0D964F028B0FA2C00D265DE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */; };
+		D0D964F228B0FFCF00D265DE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964F128B0FFCF00D265DE /* LibraryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		D0D964EB28AF9E8D00D265DE /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		D0D964ED28AF9FE700D265DE /* TopicListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListRow.swift; sourceTree = "<group>"; };
 		D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		D0D964F128B0FFCF00D265DE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				D0AA86AB2885D722004AF1C1 /* SearchView.swift */,
 				D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */,
 				D0A9FDD928A95E1B0056535D /* Modals */,
+				D0D964F128B0FFCF00D265DE /* LibraryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				7037DFF2282E9FAC00EC21E0 /* Course.swift in Sources */,
 				70F5A393284FEAAB00076906 /* Model.swift in Sources */,
 				7034A908281BEAE800AA9275 /* PreferenceKeys.swift in Sources */,
+				D0D964F228B0FFCF00D265DE /* LibraryView.swift in Sources */,
 				D00FB77A286DC8AD00E6589E /* Animation.swift in Sources */,
 				D07DA6A228ABAAD800F66A46 /* CircularProgressView.swift in Sources */,
 				70800236280F4C8900ED9379 /* TabBar.swift in Sources */,
