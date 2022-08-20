@@ -58,6 +58,7 @@
 		D0D964EE28AF9FE700D265DE /* TopicListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964ED28AF9FE700D265DE /* TopicListRow.swift */; };
 		D0D964F028B0FA2C00D265DE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */; };
 		D0D964F228B0FFCF00D265DE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964F128B0FFCF00D265DE /* LibraryView.swift */; };
+		D0D964F428B1037200D265DE /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964F328B1037200D265DE /* Certificate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		D0D964ED28AF9FE700D265DE /* TopicListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListRow.swift; sourceTree = "<group>"; };
 		D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		D0D964F128B0FFCF00D265DE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		D0D964F328B1037200D265DE /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				D0D964E128AE77F500D265DE /* SmallCourseItem.swift */,
 				D0D964E528AE8B8000D265DE /* HandbookItem.swift */,
 				D0D964ED28AF9FE700D265DE /* TopicListRow.swift */,
+				D0D964F328B1037200D265DE /* Certificate.swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				70230437283CCD1000C56EF4 /* CourseItem.swift in Sources */,
 				70230439283CF52900C56EF4 /* CourseView.swift in Sources */,
 				70FCF3362825585900979152 /* LocalizationKeys.swift in Sources */,
+				D0D964F428B1037200D265DE /* Certificate.swift in Sources */,
 				D0B6E892289120CD00A30B78 /* SignInView.swift in Sources */,
 				708A7EE12850FCA8001EB72F /* SignUpView.swift in Sources */,
 				D0AA86AE2886F6C2004AF1C1 /* Suggestion.swift in Sources */,
