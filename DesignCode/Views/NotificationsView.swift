@@ -2,14 +2,29 @@ import SwiftUI
 
 struct NotificationsView: View {
     var body: some View {
+        ZStack {
+            Color("Background").ignoresSafeArea()
+            
+            ScrollView {
+                
+                sectionSections
+            }
+            .safeAreaInset(edge: .top, content: {
+                Color.clear.frame(height: 70)
+            })
+            .overlay(NavigationBar(title: "Notifications", hasScrolled: .constant(true)))
+            .background(Image("Blob 1").offset(x: -180, y: -300))
+            
+        }
+        
+    }
+    
+    var sectionSections: some View {
         VStack(alignment: .leading) {
             ForEach(Array(courseSections.enumerated()), id: \.offset) { index, section in
                 if index != 0 { Divider() }
                 SectionRow(section: section)
-                    .onTapGesture {
-                        selectedIndex = index
-                        showSection = true
-                    }
+                
             }
         }
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
