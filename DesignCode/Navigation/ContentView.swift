@@ -26,7 +26,7 @@ struct ContentView: View {
         }
         /// customise a safe area for the TabBar
         .safeAreaInset(edge: .bottom, content: {
-            Color.clear.frame(height: 44)
+            Color.clear.frame(height: 88)
         })
         .dynamicTypeSize(.large ... .xxxLarge)
     }
