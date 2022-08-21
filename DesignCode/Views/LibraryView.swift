@@ -5,14 +5,32 @@ struct LibraryView: View {
         ZStack {
             Color("Background").ignoresSafeArea()
             ScrollView {
+                Text("Certificates".uppercased())
+                    .titleStyle()
+                
+                Certificate()
+                    .frame(height: 220)
+                    .background(
+                        RoundedRectangle(cornerRadius: 30, style: .continuous)
+                            .fill(.linearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .padding(20)
+                            .offset(y: -30)
+                    )
+                    .background(
+                        RoundedRectangle(cornerRadius: 30, style: .continuous)
+                            .fill(.linearGradient(colors: [.teal, .red], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .padding(40)
+                            .offset(y: -60)
+                    )
+                    .padding(20)
+                
+                Text("History".uppercased())
+                    .titleStyle()
                 coursesSection
                 
                 Text("Topics".uppercased())
                     .titleStyle()
                 topicsSection
-                
-                Text("Certificates".uppercased())
-                    .titleStyle()
                 
             }
             .safeAreaInset(edge: .top) {
