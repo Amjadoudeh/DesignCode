@@ -18,7 +18,7 @@ struct LibraryView: View {
             .safeAreaInset(edge: .top) {
                 Color.clear.frame(height: 70)
             }
-            .overlay(NavigationBar(title: "Recent", hasScrolled: .constant(true)))
+            .overlay(NavigationBar(title: "Library", hasScrolled: .constant(true)))
             .background(Image("Blob 1").offset(x: -100, y: -350))
         }
     }

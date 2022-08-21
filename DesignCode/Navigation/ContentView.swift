@@ -15,7 +15,7 @@ struct ContentView: View {
                 case .notifications:
                     NotificationsView()
                 case .library:
-                    HomeView()
+                    LibraryView()
                 }
             TabBar()
                 .offset(y: model.showDetail ? 200 : 0)
