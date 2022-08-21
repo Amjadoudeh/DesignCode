@@ -12,7 +12,7 @@ struct NotificationsView: View {
             .safeAreaInset(edge: .top, content: {
                 Color.clear.frame(height: 70)
             })
-            .overlay(NavigationBar(title: "Notifications", hasScrolled: .constant(true)))
+            .overlay(NavigationBar(title: "Notifications", hasScrolled: .constant(false)))
             .background(Image("Blob 1").offset(x: -180, y: -300))
             
         }
