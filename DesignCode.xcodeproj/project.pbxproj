@@ -59,6 +59,7 @@
 		D0D964F028B0FA2C00D265DE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */; };
 		D0D964F228B0FFCF00D265DE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964F128B0FFCF00D265DE /* LibraryView.swift */; };
 		D0D964F428B1037200D265DE /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D964F328B1037200D265DE /* Certificate.swift */; };
+		D0D964FD28B4D0DA00D265DE /* DesignCode.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0D964FB28B4D0DA00D265DE /* DesignCode.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		D0D964EF28B0FA2C00D265DE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		D0D964F128B0FFCF00D265DE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		D0D964F328B1037200D265DE /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		D0D964FC28B4D0DA00D265DE /* Advanced_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Advanced_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 		70BFA4402800EFF1002FD946 = {
 			isa = PBXGroup;
 			children = (
+				D0D964FB28B4D0DA00D265DE /* DesignCode.xcdatamodeld */,
 				70BFA44B2800EFF1002FD946 /* DesignCode */,
 				70BFA45C2800EFF2002FD946 /* DesignCodeTests */,
 				70BFA4662800EFF2002FD946 /* DesignCodeUITests */,
@@ -552,6 +555,7 @@
 				7034A908281BEAE800AA9275 /* PreferenceKeys.swift in Sources */,
 				D0D964F228B0FFCF00D265DE /* LibraryView.swift in Sources */,
 				D00FB77A286DC8AD00E6589E /* Animation.swift in Sources */,
+				D0D964FD28B4D0DA00D265DE /* DesignCode.xcdatamodeld in Sources */,
 				D07DA6A228ABAAD800F66A46 /* CircularProgressView.swift in Sources */,
 				70800236280F4C8900ED9379 /* TabBar.swift in Sources */,
 			);
@@ -898,6 +902,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0D964FB28B4D0DA00D265DE /* DesignCode.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0D964FC28B4D0DA00D265DE /* Advanced_SwiftUI.xcdatamodel */,
+			);
+			currentVersion = D0D964FC28B4D0DA00D265DE /* Advanced_SwiftUI.xcdatamodel */;
+			path = DesignCode.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 70BFA4412800EFF1002FD946 /* Project object */;
 }
